@@ -1,6 +1,5 @@
-import Lenis from 'lenis'
 import { motion, MotionValue, useScroll, useTransform } from 'motion/react'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 
 import techLogos from '../images/tech-logo'
 import type { ITechStack } from '../types'
@@ -52,15 +51,6 @@ const TechRow = ({
 )
 
 export default function ScrollingParallaxText() {
-	useEffect(() => {
-		const lenis = new Lenis()
-		const raf = (time: number) => {
-			lenis.raf(time)
-			requestAnimationFrame(raf)
-		}
-		requestAnimationFrame(raf)
-	}, [])
-
 	const container = useRef(null)
 	const { scrollYProgress } = useScroll({
 		target: container,

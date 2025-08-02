@@ -5,32 +5,32 @@ export const projects: IProjects[] = [
 		title: 'Furniro Web Site',
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, quidem, suscipit laborum nostrum doloribus sed illo nesciunt repellat, magnam animi quisquam consequatur? Culpa, ipsam. Laboriosam, praesentium. Quasi soluta similique quo.',
-		link: 'google.com',
-		src: '/dskmdsaksadksa.png',
-		color: '#0eb324',
+		link: 'https://www.cleanpng.com//free/decoration,2.html',
+		src: './previews/furniro.png',
+		color: 'black',
 	},
 	{
 		title: 'Furniro Web Site',
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, quidem, suscipit laborum nostrum doloribus sed illo nesciunt repellat, magnam animi quisquam consequatur? Culpa, ipsam. Laboriosam, praesentium. Quasi soluta similique quo.',
 		link: 'google.com',
-		src: '/dskmdsaksadksa.png',
-		color: '#ad23c9',
+		src: './previews/task-manager.jpg',
+		color: 'black',
 	},
 	{
 		title: 'Furniro Web Site',
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, quidem, suscipit laborum nostrum doloribus sed illo nesciunt repellat, magnam animi quisquam consequatur? Culpa, ipsam. Laboriosam, praesentium. Quasi soluta similique quo.',
 		link: 'google.com',
-		src: '/dskmdsaksadksa.png',
-		color: '#d4861f',
+		src: './previews/godofwar.jpeg',
+		color: 'black',
 	},
 	{
 		title: 'Furniro Web Site',
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, quidem, suscipit laborum nostrum doloribus sed illo nesciunt repellat, magnam animi quisquam consequatur? Culpa, ipsam. Laboriosam, praesentium. Quasi soluta similique quo.',
 		link: 'google.com',
-		src: '/dskmdsaksadksa.png',
-		color: '#19058b',
+		src: './previews/live.png',
+		color: 'black',
 	},
 ]
