@@ -9,14 +9,13 @@ import {
 import { useEffect, useRef } from 'react'
 import Button from '../components/Button'
 import Card from '../components/Card'
-import Footer from '../components/Footer'
 import Marquee from '../components/Marquee'
 import ScrollingParallaxText from '../components/ScrollingParallaxText'
 import { projects } from '../data/projects'
 
+import AboutSection from '../components/sections/AboutSection'
 import icon from '/face.png'
 import GetInTouch from '../components/GetInTouch'
-import AboutSection from '../components/sections/AboutSection'
 
 const Home = () => {
 	// smooth scroll
@@ -111,7 +110,7 @@ const Home = () => {
 			<AboutSection />
 
 			<section className='projects container'>
-				<div className='mt-100'>
+				<div className='mt-40'>
 					<motion.h2
 						style={{ opacity: projectsOpacity }}
 						className=' text-9xl bg-gradient-to-b from-[#374242] to-stone-200 text-transparent bg-clip-text text-center font-extrabold'
@@ -139,8 +138,6 @@ const Home = () => {
 			<Marquee />
 
 			<GetInTouch />
-
-			<Footer />
 		</>
 	)
 }

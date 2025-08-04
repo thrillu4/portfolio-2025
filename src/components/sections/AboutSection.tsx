@@ -1,18 +1,29 @@
-import Button from '../Button'
 import { motion, useScroll, useTransform } from 'motion/react'
+import { useRef } from 'react'
 import cap from '../../images/mess/cap.png'
 import cup from '../../images/mess/cup.png'
 import flying from '../../images/mess/flying.png'
 import nose from '../../images/mess/nose.png'
 import smile from '../../images/mess/smile.png'
+import Button from '../Button'
 
 const AboutSection = () => {
-	const { scrollY } = useScroll()
-	const aboutOpacity = useTransform(scrollY, [700, 1100], [0, 1])
+	const container = useRef(null)
+
+	const { scrollYProgress } = useScroll({
+		target: container,
+		offset: ['start end', 'center center'],
+	})
+
+	const aboutOpacity = useTransform(scrollYProgress, [0, 1], [0, 1])
+	const pOpacity = useTransform(scrollYProgress, [0, 1], [0, 1])
+	const xRight = useTransform(scrollYProgress, [0.3, 1], ['250px', '0px'])
+	const xLeft = useTransform(scrollYProgress, [0, 1], ['-250px', '0px'])
+	const y = useTransform(scrollYProgress, [0.4, 1], ['-150px', '0px'])
 
 	return (
-		<section className='about container'>
-			<div className='mt-40'>
+		<section className='about h-screen overflow-x-hidden mt-50'>
+			<div ref={container} className=' relative container'>
 				<motion.h2
 					style={{ opacity: aboutOpacity }}
 					className=' text-9xl bg-gradient-to-b from-[#374242] to-stone-200 text-transparent bg-clip-text text-center font-extrabold'
@@ -23,34 +34,19 @@ const AboutSection = () => {
 				<motion.img
 					src={nose}
 					alt='Right Decoration'
-					className='absolute left-20 w-50 -rotate-8'
-					initial={{ x: -50, opacity: 0 }}
-					whileInView={{
-						x: 0,
-						opacity: 1,
-						transition: { duration: 0.5, ease: 'easeIn', delay: 1 },
-					}}
+					className='absolute -left-10 w-50 -rotate-8'
+					style={{ x: xLeft }}
 				/>
 
 				<motion.img
 					src={cap}
 					alt='Right Decoration'
-					className='absolute right-20 w-50 rotate-6'
-					initial={{ x: 30, opacity: 0 }}
-					whileInView={{
-						x: 0,
-						opacity: 1,
-						transition: { duration: 1, ease: 'easeIn', delay: 1 },
-					}}
+					className='absolute -right-10 w-50 rotate-6'
+					style={{ x: xRight }}
 				/>
 
 				<motion.p
-					initial={{ x: -100, opacity: 0 }}
-					whileInView={{
-						x: 0,
-						opacity: 1,
-						transition: { duration: 1, ease: 'easeOut' },
-					}}
+					style={{ opacity: pOpacity }}
 					className='relative font-medium leading-loose my-15 text-2xl max-w-6xl text-center mx-auto'
 				>
 					I'm Denys, a frontend developer who takes pride in writing clean,
@@ -66,26 +62,14 @@ const AboutSection = () => {
 				<motion.img
 					src={cup}
 					alt='Right Decoration'
-					className='absolute left-50 w-50 rotate-6'
-					initial={{ x: -100, y: 100, opacity: 0 }}
-					whileInView={{
-						x: 0,
-						y: 0,
-						opacity: 1,
-						transition: { duration: 1.5, ease: 'easeIn' },
-					}}
+					className='absolute left-20 w-50 rotate-6'
+					style={{ x: xRight }}
 				/>
 				<motion.img
 					src={smile}
 					alt='Right Decoration'
-					className='absolute right-30 w-50 rotate-12'
-					initial={{ y: 150, x: 50, opacity: 0 }}
-					whileInView={{
-						y: 0,
-						x: 0,
-						opacity: 1,
-						transition: { duration: 1, ease: 'easeIn' },
-					}}
+					className='absolute right-10 w-50 rotate-12'
+					style={{ x: xLeft }}
 				/>
 				<div className='relative'>
 					<Button>EXPLORE MORE</Button>
@@ -94,12 +78,7 @@ const AboutSection = () => {
 							src={flying}
 							alt='Right Decoration'
 							className='absolute left-1/2 -translate-x-1/2  w-50'
-							initial={{ y: 10, opacity: 0 }}
-							whileInView={{
-								y: -10,
-								opacity: 1,
-								transition: { duration: 1, ease: 'easeOut' },
-							}}
+							style={{ y }}
 						/>
 					</div>
 				</div>

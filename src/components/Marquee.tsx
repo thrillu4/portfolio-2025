@@ -10,9 +10,9 @@ const Marquee = () => {
 		'안녕',
 		'Hallo',
 		'你好',
-		'ПРИВІТ',
+		'Dzień dobry',
 		'OLÁ',
-		'ПРИВЕТ',
+		'Hej',
 		'السلام عليكم',
 	]
 
@@ -41,7 +41,7 @@ const Marquee = () => {
 				<div className='overflow-hidden text-[270px] font-["Anton"] tracking-tight font-bold pt-30 pb-40'>
 					<motion.div
 						className='whitespace-nowrap flex gap-10'
-						animate={{ x: [0, -12000] }}
+						animate={{ x: [0, -11000] }}
 						transition={{
 							duration: 40,
 							repeat: Infinity,

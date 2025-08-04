@@ -14,6 +14,8 @@ import sass from './sass.png'
 import tailwind from './tailwind.png'
 import ts from './ts.png'
 import vite from './vite.png'
+import motion from './motion.png'
+import express from './express.png'
 
 export default {
 	css,
@@ -32,4 +34,6 @@ export default {
 	tailwind,
 	ts,
 	vite,
+	motion,
+	express,
 }

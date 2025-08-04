@@ -23,11 +23,11 @@ const GetInTouch = () => {
 	const y = useTransform(scrollYProgress, [0.5, 1], ['100px', '0px'])
 
 	return (
-		<section className='contact w-full bg-neutral-200 h-screen overflow-x-hidden'>
-			<div
-				ref={container}
-				className='container relative flex items-center text-black h-full justify-evenly gap-15 '
-			>
+		<section
+			ref={container}
+			className='contact w-full bg-neutral-200 h-screen overflow-x-hidden'
+		>
+			<div className='container relative flex items-center text-black h-full justify-evenly gap-15 '>
 				<motion.img
 					src={mum}
 					style={{ x: xRight }}
