@@ -25,12 +25,12 @@ const Marquee = () => {
 	const borderBottomLeftRadius = useTransform(
 		scrollYProgress,
 		[0, 1],
-		['50px', '0px']
+		['70px', '0px']
 	)
 	const borderBottomRightRadius = useTransform(
 		scrollYProgress,
 		[0, 1],
-		['50px', '0px']
+		['70px', '0px']
 	)
 	return (
 		<div ref={container} className='bg-neutral-200  w-full'>

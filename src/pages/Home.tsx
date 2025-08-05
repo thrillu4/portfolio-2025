@@ -1,4 +1,3 @@
-import Lenis from 'lenis'
 import {
 	motion,
 	useMotionValue,
@@ -13,22 +12,11 @@ import Marquee from '../components/Marquee'
 import ScrollingParallaxText from '../components/ScrollingParallaxText'
 import { projects } from '../data/projects'
 
-import AboutSection from '../components/sections/AboutSection'
-import icon from '/face.png'
+import AboutSection from '../components/AboutSection'
 import GetInTouch from '../components/GetInTouch'
+import icon from '/face.png'
 
 const Home = () => {
-	// smooth scroll
-	useEffect(() => {
-		const lenis = new Lenis()
-		const raf = (time: number) => {
-			lenis.raf(time)
-			requestAnimationFrame(raf)
-		}
-		requestAnimationFrame(raf)
-	}, [])
-	//
-
 	// text appear
 	const { scrollY } = useScroll()
 
@@ -100,7 +88,7 @@ const Home = () => {
 						className='w-130 '
 					/>
 					<div className='grow-1 basis-0'>
-						<Button>CONTACT ME</Button>
+						<Button to='/contact'>CONTACT ME</Button>
 					</div>
 				</div>
 			</section>
