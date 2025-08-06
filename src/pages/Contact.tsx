@@ -1,5 +1,11 @@
+import GetInTouch from '../components/GetInTouch'
+
 const Contact = () => {
-	return <div className='text-9xl text-center h-screen'>Contact</div>
+	return (
+		<>
+			<GetInTouch />
+		</>
+	)
 }
 
 export default Contact

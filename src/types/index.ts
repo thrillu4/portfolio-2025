@@ -8,5 +8,9 @@ export interface IProjects {
 	description: string
 	src: string
 	link: string
+	type: string
+	techStack: string[]
+	gitHub: string
+	logos: string[]
 	color: string
 }
