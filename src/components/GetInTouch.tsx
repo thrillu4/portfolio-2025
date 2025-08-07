@@ -25,7 +25,7 @@ const GetInTouch = () => {
 	return (
 		<section
 			ref={container}
-			className='contact w-full bg-neutral-200 h-screen overflow-x-hidden'
+			className='contact w-full bg-white h-screen overflow-x-hidden'
 		>
 			<div className='container relative flex items-center text-black h-full justify-evenly gap-15 '>
 				<motion.img

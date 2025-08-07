@@ -18,7 +18,7 @@ const Footer = () => {
 	const opacity = useTransform(scrollYProgress, [0, 1], [0.3, 1])
 
 	return (
-		<footer className='bg-neutral-200 '>
+		<footer className='bg-white '>
 			<div ref={container} className='bg-black h-full rounded-t-[70px]'>
 				<div className='container pt-20 pb-10 flex items-center justify-between'>
 					<div

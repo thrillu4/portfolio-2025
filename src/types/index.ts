@@ -13,4 +13,5 @@ export interface IProjects {
 	gitHub: string
 	logos: string[]
 	color: string
+	screenshots: string[]
 }

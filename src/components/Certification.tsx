@@ -18,7 +18,7 @@ const Certification = () => {
 	const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1])
 	const x = useTransform(scrollYProgress, [0, 0.7], ['200px', '0px'])
 	return (
-		<div ref={container} className='bg-neutral-200 pb-30 relative'>
+		<div ref={container} className='bg-white pb-30 relative'>
 			<div>
 				<motion.img
 					style={{ x }}

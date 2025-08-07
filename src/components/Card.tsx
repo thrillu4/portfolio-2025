@@ -14,10 +14,9 @@ const Card = ({
 	targetScale,
 	range,
 	progress,
+	type,
 	title,
-	description,
-	link,
-	src,
+	screenshots,
 	color,
 }: Props) => {
 	const container = useRef(null)
@@ -49,8 +48,8 @@ const Card = ({
 					<div className='flex items-center gap-8'>
 						<div className='font-extrabold text-7xl'>{`0${i + 1}`}</div>
 						<div className='pt-2'>
-							<h1 className='font-bold'>{title}</h1>
-							<div className='text-lg'>React Redux Tailwind</div>
+							<div className='text-lg'>{type}</div>
+							<h1 className='font-bold text-3xl'>{title}</h1>
 						</div>
 					</div>
 					<button className='border-2 border-white px-20 py-5  rounded-full cursor-pointer hover:bg-white hover:border-black hover:text-black font-bold transition-all duration-300'>
@@ -58,10 +57,10 @@ const Card = ({
 					</button>
 				</div>
 				<div className='grid grid-cols-6 grid-rows-2 gap-4 mt-10'>
-					<div className='h-[500px] overflow-hidden col-span-4 row-span-2'>
+					<div className='h-[500px] overflow-hidden col-span-4 row-span-2 '>
 						<motion.div style={{ scale: imageScale }} className='w-full h-full'>
 							<img
-								src={src}
+								src={screenshots[0]}
 								alt='project preview'
 								className='w-full h-full object-cover rounded-4xl'
 							/>
@@ -70,7 +69,7 @@ const Card = ({
 					<div className='h-[242px] overflow-hidden col-span-2 col-start-5 '>
 						<motion.div style={{ scale: imageScale }} className='w-full h-full'>
 							<img
-								src={src}
+								src={screenshots[1]}
 								alt='project preview'
 								className='w-full h-full object-cover rounded-4xl'
 							/>
@@ -79,7 +78,7 @@ const Card = ({
 					<div className='h-[242px] overflow-hidden col-span-2 col-start-5 row-start-2'>
 						<motion.div style={{ scale: imageScale }} className='w-full h-full'>
 							<img
-								src={src}
+								src={screenshots[2]}
 								alt='project preview'
 								className='w-full h-full object-cover rounded-4xl'
 							/>

@@ -33,7 +33,7 @@ const Marquee = () => {
 		['70px', '0px']
 	)
 	return (
-		<div ref={container} className='bg-neutral-200  w-full'>
+		<div ref={container} className='bg-white  w-full'>
 			<motion.div
 				style={{ borderBottomLeftRadius, borderBottomRightRadius }}
 				className='bg-black'

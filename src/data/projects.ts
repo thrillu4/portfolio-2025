@@ -17,6 +17,11 @@ export const projects: IProjects[] = [
 			'./tech/tailwind.png',
 		],
 		color: '#C7A316',
+		screenshots: [
+			'./screenshots/furniro.jpg',
+			'./screenshots/furniro2.jpg',
+			'./screenshots/furniro3.jpeg',
+		],
 	},
 	{
 		type: 'SAAS',
@@ -34,6 +39,11 @@ export const projects: IProjects[] = [
 			'./tech/tailwind.png',
 		],
 		color: '#151E2E',
+		screenshots: [
+			'./screenshots/task.jpg',
+			'./screenshots/task2.jpg',
+			'./screenshots/task3.jpg',
+		],
 	},
 	{
 		type: 'LANDING PAGE',
@@ -46,6 +56,11 @@ export const projects: IProjects[] = [
 		gitHub: 'https://github.com/thrillu4/god_of_war',
 		logos: ['./tech/js.png', './tech/html.png', './tech/sass.png'],
 		color: '#1C2023',
+		screenshots: [
+			'./screenshots/gow.jpg',
+			'./screenshots/gow2.png',
+			'./screenshots/gow3.jpg',
+		],
 	},
 	{
 		type: 'MULTI-LANGUAGE LANDING PAGE',
@@ -58,5 +73,10 @@ export const projects: IProjects[] = [
 		gitHub: 'https://github.com/thrillu4/live-project',
 		logos: ['./tech/js.png', './tech/html.png', './tech/css.png'],
 		color: '#FFBEBE',
+		screenshots: [
+			'./screenshots/live.jpg',
+			'./screenshots/live2.avif',
+			'./screenshots/live3.jpg',
+		],
 	},
 ]

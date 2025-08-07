@@ -92,7 +92,7 @@ const About = () => {
 	]
 
 	return (
-		<div className=' bg-neutral-200'>
+		<div className=' bg-white'>
 			<motion.div
 				style={{ borderBottomLeftRadius, borderBottomRightRadius }}
 				className='bg-black'

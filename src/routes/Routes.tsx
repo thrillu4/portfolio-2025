@@ -4,6 +4,7 @@ import Contact from '../pages/Contact'
 import Home from '../pages/Home'
 import Projects from '../pages/Projects'
 import Skills from '../pages/Skills'
+import SingleProject from '../pages/SingleProject'
 
 const ProjectRoutes = () => {
 	return (
@@ -12,6 +13,7 @@ const ProjectRoutes = () => {
 			<Route path='/about' element={<About />} />
 			<Route path='/skills' element={<Skills />} />
 			<Route path='/projects' element={<Projects />} />
+			<Route path='/projects/:id' element={<SingleProject />} />
 			<Route path='/contact' element={<Contact />} />
 		</Routes>
 	)

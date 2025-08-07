@@ -1,22 +1,34 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { projects } from '../data/projects'
 import CustomCursor from './CustomCursor'
+import { motion, useScroll, useTransform } from 'motion/react'
 
 const ProjectsGrid = () => {
 	const [hovered, setHovered] = useState<number | null>(null)
+	const container = useRef(null)
+
+	const { scrollYProgress } = useScroll({
+		target: container,
+		offset: ['start end', 'end start'],
+	})
+
+	const opacity = useTransform(scrollYProgress, [0, 0.3], [0.3, 1])
+
 	return (
 		<div
+			ref={container}
 			className={`grid grid-cols-2 gap-y-30 gap-x-10 relative ${
 				hovered === null ? 'cursor-default' : 'cursor-none'
 			}`}
 		>
 			<CustomCursor visible={hovered} />
 			{projects.map((project, i) => (
-				<div
+				<motion.div
 					onMouseEnter={() => setHovered(i)}
 					onMouseLeave={() => setHovered(null)}
 					style={{
 						backgroundColor: hovered === i ? project.color : 'transparent',
+						opacity,
 					}}
 					className={`border-4 border-white  p-10 text-center `}
 				>
@@ -40,7 +52,7 @@ const ProjectsGrid = () => {
 							</div>
 						))}
 					</div>
-				</div>
+				</motion.div>
 			))}
 		</div>
 	)
