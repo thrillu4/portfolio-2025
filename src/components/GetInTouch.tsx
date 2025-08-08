@@ -1,10 +1,15 @@
 import { motion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
 import crow from '../images/mess/crow.png'
-import spiders from '../images/mess/spiders.png'
 import mum from '../images/mess/mum.png'
+import spiders from '../images/mess/spiders.png'
 
-const GetInTouch = () => {
+interface Props {
+	bg: string
+	color: string
+}
+
+const GetInTouch = ({ bg, color }: Props) => {
 	const container = useRef(null)
 
 	const { scrollYProgress } = useScroll({
@@ -24,6 +29,7 @@ const GetInTouch = () => {
 
 	return (
 		<section
+			style={{ backgroundColor: bg, color }}
 			ref={container}
 			className='contact w-full bg-white h-screen overflow-x-hidden'
 		>
@@ -42,13 +48,13 @@ const GetInTouch = () => {
 				/>
 				<div>
 					<motion.h3
-						style={{ clipPath: clip }}
+						style={{ clipPath: clip, color }}
 						className='text-9xl  font-extrabold tracking-tighter mb-10'
 					>
 						LET'S <br /> GET IN <br /> TOUCH
 					</motion.h3>
 					<motion.a
-						style={{ clipPath: clip }}
+						style={{ clipPath: clip, color }}
 						href='mailto:kraya.work@gmail.com'
 						className='text-4xl underline text-center font-semibold block'
 					>
@@ -56,7 +62,7 @@ const GetInTouch = () => {
 					</motion.a>
 				</div>
 				<div className='w-1/2'>
-					<form className='flex flex-col gap-10'>
+					<form style={{ color }} className='flex flex-col gap-10'>
 						<input
 							type='text'
 							name='name'

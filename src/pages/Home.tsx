@@ -125,7 +125,7 @@ const Home = () => {
 
 			<Marquee />
 
-			<GetInTouch />
+			<GetInTouch color={'#000'} bg={'#fff'} />
 		</>
 	)
 }

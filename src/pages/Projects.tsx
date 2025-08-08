@@ -18,27 +18,27 @@ const Projects = () => {
 	const container = useRef(null)
 	const ref = useRef(null)
 
-	const { scrollY } = useScroll({
+	const { scrollY, scrollYProgress } = useScroll({
 		target: container,
 		offset: ['start end', 'end end'],
 	})
 
-	const { scrollYProgress } = useScroll({
+	const scroll = useScroll({
 		target: ref,
 	})
 
 	const borderBottomLeftRadius = useTransform(
-		scrollYProgress,
+		scroll.scrollYProgress,
 		[0.3, 1],
 		['70px', '0px']
 	)
 	const borderBottomRightRadius = useTransform(
-		scrollYProgress,
+		scroll.scrollYProgress,
 		[0.3, 1],
 		['70px', '0px']
 	)
 
-	const opacity = useTransform(scrollYProgress, [0, 1], [0, 1])
+	const opacity = useTransform(scrollYProgress, [0, 0.6], [0, 1])
 	const y = useTransform(scrollY, [0, 3800], ['350px', '0px'])
 	const xRight = useTransform(scrollY, [0, 3800], ['350px', '0px'])
 	const xLeft = useTransform(scrollY, [0, 3800], ['-350px', '0px'])
@@ -233,7 +233,7 @@ const Projects = () => {
 					</div>
 				</div>
 			</motion.div>
-			<GetInTouch />
+			<GetInTouch color={'#000'} bg={'#fff'} />
 		</div>
 	)
 }

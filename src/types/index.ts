@@ -14,4 +14,5 @@ export interface IProjects {
 	logos: string[]
 	color: string
 	screenshots: string[]
+	bg: string
 }

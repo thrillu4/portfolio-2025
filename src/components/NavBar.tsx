@@ -2,7 +2,7 @@ import { NavLink } from 'react-router'
 
 const NavBar = () => {
 	return (
-		<nav className='container'>
+		<nav className='container relative z-40'>
 			<ul className='flex items-center justify-between text-3xl font-bold'>
 				<NavLink
 					to={'/'}
