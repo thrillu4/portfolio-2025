@@ -13,14 +13,14 @@ const GodOfWar = () => {
 		target: container,
 	})
 
-	const y = useTransform(scrollYProgress, [0, 0.5], ['-1100px', '0px'])
-	const scale = useTransform(scrollYProgress, [0, 0.5], [2.5, 1])
+	const y = useTransform(scrollYProgress, [0, 0.4], ['-700px', '0px'])
+	const scale = useTransform(scrollYProgress, [0, 0.5], [3.5, 1])
 	const rotate = useTransform(scrollYProgress, [0, 0.5], ['0deg', '-5deg'])
 	const opacity = useTransform(scrollYProgress, [0, 0.8], [0, 1])
 	return (
 		<div style={{ backgroundColor: color }}>
 			<div className='relative z-30 ' ref={container}>
-				<div className='pt-40 pb-120 '>
+				<div className='pt-40 pb-70 '>
 					<motion.h3
 						initial={{ y: '60px', opacity: 0 }}
 						animate={{ y: '0px', opacity: 1 }}
@@ -35,7 +35,7 @@ const GodOfWar = () => {
 						transition={{ duration: 1, delay: 1, ease: 'easeIn' }}
 						className='text-[300px] font-[Anton] tracking-tight text-center leading-75'
 					>
-						GOD OF WAR Ragnarök
+						GOD OF WAR <br /> Ragnarök
 					</motion.h1>
 				</div>
 				<div>
@@ -63,14 +63,14 @@ const GodOfWar = () => {
 						<a
 							href={link}
 							target='_blank'
-							className={`border-4 border-white  p-5 rounded-4xl flex items-center gap-2 cursor-pointer transition duration-200 hover:text-orange-300 hover:bg-white`}
+							className={`border-4 border-white  p-5 rounded-4xl flex items-center gap-2 cursor-pointer transition duration-200 hover:text-slate-800 hover:bg-white`}
 						>
 							LIVE DEMO <CircleArrowRight size={35} />
 						</a>
 						<a
 							href={gitHub}
 							target='_blank'
-							className={`border-4 border-white  p-5 rounded-4xl flex items-center gap-2 cursor-pointer transition duration-200 hover:text-orange-300 hover:bg-white`}
+							className={`border-4 border-white  p-5 rounded-4xl flex items-center gap-2 cursor-pointer transition duration-200 hover:text-slate-800 hover:bg-white`}
 						>
 							REPOSITORY <Github size={35} />
 						</a>

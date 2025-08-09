@@ -76,8 +76,26 @@ const AboutSection = () => {
 					<div>
 						<motion.img
 							src={flying}
+							animate={{
+								x: [-10, -10],
+								rotate: [3, -3],
+							}}
+							transition={{
+								x: {
+									duration: 1,
+									repeat: Infinity,
+									repeatType: 'reverse',
+									ease: 'easeInOut',
+								},
+								rotate: {
+									duration: 1,
+									repeat: Infinity,
+									repeatType: 'reverse',
+									ease: 'easeInOut',
+								},
+							}}
 							alt='Right Decoration'
-							className='absolute left-1/2 -translate-x-1/2  w-50'
+							className='absolute left-1/2 -translate-x-1/2 top-16  w-50 -z-30'
 							style={{ y }}
 						/>
 					</div>

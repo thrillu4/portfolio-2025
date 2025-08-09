@@ -14,7 +14,7 @@ const Furniro = () => {
 	})
 
 	const y = useTransform(scrollYProgress, [0, 0.6], ['-970px', '0px'])
-	const scale = useTransform(scrollYProgress, [0, 0.5], [3.2, 1])
+	const scale = useTransform(scrollYProgress, [0, 0.5], [3.4, 1])
 	const rotate = useTransform(scrollYProgress, [0, 0.5], ['0deg', '-5deg'])
 	const opacity = useTransform(scrollYProgress, [0, 0.6], [0, 1])
 	return (

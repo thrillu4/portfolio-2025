@@ -23,6 +23,7 @@ export const projects: IProjects[] = [
 			'./screenshots/furniro3.jpeg',
 		],
 		bg: '../bg/furniro.jpg',
+		route: 'furniro',
 	},
 	{
 		type: 'SAAS',
@@ -45,7 +46,8 @@ export const projects: IProjects[] = [
 			'./screenshots/task2.jpg',
 			'./screenshots/task3.jpg',
 		],
-		bg: '',
+		bg: '../bg/task.jpg',
+		route: 'task-manager',
 	},
 	{
 		type: 'LANDING PAGE',
@@ -64,6 +66,7 @@ export const projects: IProjects[] = [
 			'./screenshots/gow3.jpg',
 		],
 		bg: '../bg/gow.png',
+		route: 'godofwar',
 	},
 	{
 		type: 'MULTI-LANGUAGE LANDING PAGE',
@@ -82,5 +85,6 @@ export const projects: IProjects[] = [
 			'./screenshots/live3.jpg',
 		],
 		bg: '',
+		route: 'live-projects',
 	},
 ]

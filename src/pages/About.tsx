@@ -166,6 +166,24 @@ const About = () => {
 						<Button to='/contact'>CONTACT ME</Button>
 						<motion.img
 							style={{ y: yDown }}
+							animate={{
+								x: [-10, 10],
+								rotate: [2, -2],
+							}}
+							transition={{
+								x: {
+									duration: 1,
+									repeat: Infinity,
+									repeatType: 'reverse',
+									ease: 'easeInOut',
+								},
+								rotate: {
+									duration: 1,
+									repeat: Infinity,
+									repeatType: 'reverse',
+									ease: 'easeInOut',
+								},
+							}}
 							src={swing}
 							alt='Decoration'
 							className='absolute right-[48%] translate-x-1/2  top-17 w-50'

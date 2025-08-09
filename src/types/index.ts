@@ -15,4 +15,5 @@ export interface IProjects {
 	color: string
 	screenshots: string[]
 	bg: string
+	route: string
 }
