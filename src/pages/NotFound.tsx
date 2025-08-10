@@ -8,9 +8,9 @@ import ghosty from '../images/404/ghosty.png'
 
 const NotFound = () => {
 	return (
-		<div className='h-screen container'>
+		<div className='relative md:h-screen mx-auto overflow-hidden md:overflow-visible  py-25 md:py-0'>
 			<motion.img
-				className='w-50 absolute left-1/12  top-30'
+				className='md:w-50 w-25 absolute left-1/12  top-30'
 				src={ghost}
 				animate={{
 					y: [-50, 240],
@@ -40,7 +40,7 @@ const NotFound = () => {
 			/>
 			<motion.img
 				src={ghosty}
-				className='w-50 absolute right-1/12  top-50'
+				className='md:w-50 w-25 absolute right-1/12  top-50'
 				animate={{
 					y: [250, -240],
 					x: [150, -240],
@@ -67,11 +67,11 @@ const NotFound = () => {
 					},
 				}}
 			/>
-			<div className='w-170 mx-auto text-center font-extrabold text-6xl'>
+			<div className='md:w-170 w-full mx-auto text-center font-extrabold md:text-6xl text-4xl'>
 				<motion.img src={notFound} alt='not found!' />
 				<motion.div className='mb-10'>Oops! Page not found!</motion.div>
 				<Link
-					className='relative text-3xl inline-flex items-center gap-3 border-2 font-bold border-white rounded-4xl py-3 px-6 hover:text-black hover:bg-white transition duration-100'
+					className='mb-20 relative text-xl md:text-3xl inline-flex items-center gap-3 border-2 font-bold border-white rounded-4xl py-3 px-6 hover:text-black hover:bg-white transition duration-100'
 					to='/'
 				>
 					BACK TO HOME <House size={30} />
@@ -95,7 +95,7 @@ const NotFound = () => {
 							},
 						}}
 						src={clown}
-						className='absolute top-14 right-1/2 translate-x-1/2 w-50'
+						className='absolute top-14 right-1/2 translate-x-1/2  md:w-50 w-20'
 					/>
 				</Link>
 			</div>

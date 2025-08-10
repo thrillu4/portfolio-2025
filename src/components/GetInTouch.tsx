@@ -31,37 +31,37 @@ const GetInTouch = ({ bg, color }: Props) => {
 		<section
 			style={{ backgroundColor: bg, color }}
 			ref={container}
-			className='contact w-full bg-white h-screen overflow-x-hidden'
+			className='contact w-full bg-white py-20 md:py-0 md:h-screen overflow-hidden'
 		>
-			<div className='container relative flex items-center text-black h-full justify-evenly gap-15 '>
+			<div className='md:container md:mx-auto relative flex items-center flex-col md:flex-row text-black h-full md:justify-evenly justify-center md:gap-15 gap-10'>
 				<motion.img
 					src={mum}
 					style={{ x: xRight }}
 					alt='Right Decoration'
-					className='absolute top-10  -right-10 w-40 '
+					className='absolute top-10 right-0  md:-right-10 md:w-40 w-20 '
 				/>
 				<motion.img
 					src={crow}
 					alt='Left Decoration'
-					className='absolute bottom-10 -left-[7%] w-50'
+					className='absolute md:bottom-10 -bottom-20 -left-2 md:-left-[7%] md:w-50 w-20'
 					style={{ x: xLeft }}
 				/>
 				<div>
 					<motion.h3
 						style={{ clipPath: clip, color }}
-						className='text-9xl  font-extrabold tracking-tighter mb-10'
+						className='text-4xl md:text-9xl text-center md:text-left  font-extrabold tracking-tighter mb-10'
 					>
 						LET'S <br /> GET IN <br /> TOUCH
 					</motion.h3>
 					<motion.a
 						style={{ clipPath: clip, color }}
 						href='mailto:kraya.work@gmail.com'
-						className='text-4xl underline text-center font-semibold block'
+						className='text-base md:text-4xl underline text-center font-semibold block'
 					>
 						kraya.work@gmail.com
 					</motion.a>
 				</div>
-				<div className='w-1/2'>
+				<div className='md:w-1/2 w-10/12'>
 					<form style={{ color }} className='flex flex-col gap-10'>
 						<input
 							type='text'
@@ -69,7 +69,7 @@ const GetInTouch = ({ bg, color }: Props) => {
 							placeholder='Full Name*'
 							required
 							autoComplete='on'
-							className='border-b  border-stone-500   border-dotted p-3 focus:outline-2 focus:rounded-2xl focus:outline-purple-800'
+							className='border-b  text-xs md:text-base border-stone-500   border-dotted p-3 focus:outline-2 focus:rounded-2xl focus:outline-purple-800'
 						/>
 						<div className='flex items-center w-full gap-10'>
 							<input
@@ -78,30 +78,30 @@ const GetInTouch = ({ bg, color }: Props) => {
 								placeholder='Email*'
 								required
 								autoComplete='on'
-								className='border-b  border-stone-500  border-dotted p-3 w-1/2 focus:outline-2 focus:rounded-2xl focus:outline-purple-800'
+								className='border-b text-xs md:text-base  border-stone-500  border-dotted p-3 w-1/2 focus:outline-2 focus:rounded-2xl focus:outline-purple-800'
 							/>
 							<input
 								type='tel'
 								name='phone'
 								placeholder='Phone number'
 								autoComplete='on'
-								className='border-b  border-stone-500  border-dotted p-3 w-1/2 focus:outline-2 focus:rounded-2xl focus:outline-purple-800'
+								className='border-b  text-xs md:text-base border-stone-500  border-dotted p-3 w-1/2 focus:outline-2 focus:rounded-2xl focus:outline-purple-800'
 							/>
 						</div>
 						<textarea
 							name='message'
 							placeholder='Message'
-							className='border-b  border-stone-500  border-dotted px-3 pt-3 pb-10 resize-none focus:outline-2 focus:rounded-2xl focus:outline-purple-800'
+							className='border-b text-xs md:text-base  border-stone-500  border-dotted px-3 pt-3 pb-10 resize-none focus:outline-2 focus:rounded-2xl focus:outline-purple-800'
 						/>
 						<button
 							type='submit'
-							className='relative border-3 border-purple-800 rounded-4xl w-full py-3 text-2xl text-purple-800 cursor-pointer hover:bg-purple-800 hover:text-white duration-300 font-bold transition '
+							className='relative text-sx border-3 border-purple-800 rounded-4xl w-full py-1 md:py-3 md:text-2xl text-purple-800 cursor-pointer hover:bg-purple-800 hover:text-white duration-300 font-bold transition '
 						>
 							SEND
 							<motion.img
 								src={spiders}
 								alt='Right Decoration'
-								className='absolute top-14 right-15  w-30'
+								className='absolute md:top-14 top-8 md:right-15 right-3  md:w-30 w-20'
 								style={{ y }}
 							/>
 						</button>

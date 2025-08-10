@@ -17,73 +17,64 @@ const Footer = () => {
 	const surname = useTransform(scrollYProgress, [0, 1], ['-100px', '0px'])
 	const opacity = useTransform(scrollYProgress, [0, 1], [0.3, 1])
 
+	const links = [
+		{
+			label: 'TELEGRAM',
+			img: telegram,
+		},
+		{
+			label: 'LINKEDIN',
+			img: linkedin,
+		},
+		{
+			label: 'GITHUB',
+			img: github,
+		},
+		{
+			label: 'INSTAGRAM',
+			img: instagram,
+		},
+	]
+
 	return (
 		<footer className=' relative z-50'>
 			<div ref={container}>
-				<div className='container pt-20 pb-10 flex items-center justify-between'>
+				<div className='md:container overflow-x-hidden mx-auto pt-10 md:pt-20 pb-10 flex items-center flex-col md:flex-row gap-10 md:gap-0 justify-between'>
 					<div
 						style={{
 							WebkitTextStroke: '1px #fff',
 							color: '#000',
 						}}
-						className='font-extrabold text-9xl tracking-tighter'
+						className='font-extrabold text-4xl md:text-9xl tracking-tighter'
 					>
 						<motion.div style={{ x: name, opacity }}>DENYS</motion.div>
 						<motion.div style={{ x: surname, opacity }}>KRAIOVYI</motion.div>
 					</div>
 
-					<div className='flex gap-50'>
+					<div className='flex gap-10 md:gap-50'>
 						<div className='flex flex-col items-center gap-4'>
-							<div className='text-2xl font-bold'>SOCIAL</div>
+							<div className='md:text-2xl font-bold'>SOCIAL</div>
 							<ul className='flex flex-col gap-3'>
-								<li>
-									<a
-										href='https://t.me/real_thrill'
-										target='_blank'
-										className='flex items-center gap-1 hover:underline transition duration-300'
-									>
-										<img className='w-5' src={telegram} alt='telegram' />
-										TELEGRAM
-									</a>
-								</li>
-								<li>
-									<a
-										href='https://www.linkedin.com/in/denis-kraevoy/'
-										target='_blank'
-										className='flex items-center gap-1 hover:underline transition duration-300'
-									>
-										<img className='w-5' src={linkedin} alt='linkedIn' />
-										LINKEDIN
-									</a>
-								</li>
-								<li>
-									<a
-										href='https://github.com/thrillu4'
-										target='_blank'
-										className='flex items-center gap-1 hover:underline transition duration-300'
-									>
-										<img className='w-5' src={github} alt='github' />
-										GITHUB
-									</a>
-								</li>
-								<li>
-									<a
-										href='https://www.instagram.com/thrillinst'
-										target='_blank'
-										className='flex items-center gap-1 hover:underline transition duration-300'
-									>
-										<img className='w-5' src={instagram} alt='instagram' />
-										INSTAGRAM
-									</a>
-								</li>
+								{links.map((link) => (
+									<li key={link.label}>
+										<a
+											href='https://t.me/real_thrill'
+											target='_blank'
+											className='flex items-center text-xs md:text-base gap-1 hover:underline transition duration-300'
+										>
+											<img className='w-5' src={link.img} alt='telegram' />
+											{link.label}
+										</a>
+									</li>
+								))}
 							</ul>
 						</div>
 						<div className='flex flex-col items-center gap-4'>
-							<div className='text-2xl font-bold'>CONTACT</div>
-							<ul className='flex flex-col gap-3'>
+							<div className='md:text-2xl font-bold'>CONTACT</div>
+							<ul className='flex flex-col gap-3 text-xs md:text-base'>
 								<li>
 									<a
-										className='hover:underline transition duration-300'
+										className='hover:underline transition duration-300 '
 										href='mailto:kraya.work@gmail.com
 '
 									>
@@ -99,7 +90,7 @@ const Footer = () => {
 					</div>
 				</div>
 
-				<div className='flex items-center  h-70'>
+				<div className='flex items-center  md:h-70 md:py-0 py-4'>
 					<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 480'>
 						<path
 							d='M480 210A160 160 0 0 0 210 93.8V0A160 160 0 0 0 93.8 270H0a160 160 0 0 0 270 116.2V480a160 160 0 0 0 116.2-270H480Zm-210 60h-60v-60h60v60Z'

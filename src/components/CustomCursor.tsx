@@ -23,7 +23,7 @@ const CustomCursor = ({ visible }: Props) => {
 	if (visible === null) return
 	return (
 		<motion.div
-			className='fixed z-50 pointer-events-none'
+			className='hidden md:block fixed z-50 pointer-events-none'
 			style={{
 				x: springX,
 				y: springY,

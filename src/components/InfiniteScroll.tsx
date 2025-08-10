@@ -1,6 +1,5 @@
-import { useAnimationFrame, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { RectangleVertical } from 'lucide-react'
-import { useRef } from 'react'
 
 const items = [
 	{ icon: <RectangleVertical />, label: 'React' },

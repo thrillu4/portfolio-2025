@@ -113,12 +113,12 @@ const LiveProjects = () => {
 					/>
 				)}
 
-				<div className='pt-40 pb-120'>
+				<div className='pt-40 md:pb-120 pb-90'>
 					<motion.h3
 						initial={{ y: '60px', opacity: 0 }}
 						animate={{ y: '0px', opacity: 1 }}
 						transition={{ duration: 1, delay: 1, ease: 'easeIn' }}
-						className='text-5xl text-center font-medium'
+						className='text-2xl md:text-5xl text-center font-medium'
 					>
 						{type} - 2025
 					</motion.h3>
@@ -126,58 +126,58 @@ const LiveProjects = () => {
 						initial={{ y: '60px', opacity: 0 }}
 						animate={{ y: '0px', opacity: 1 }}
 						transition={{ duration: 1, delay: 1, ease: 'easeIn' }}
-						className='text-[300px] font-[Anton] tracking-tight text-center leading-75'
+						className='text-7xl md:text-[300px] font-[Anton] tracking-tight text-center md:leading-75'
 					>
 						HANDLE LIVE <br /> PROJECTS
 					</motion.h1>
 				</div>
 				<div>
-					<div className=' relative w-200 mx-auto'>
+					<div className=' relative md:w-200 w-full mx-auto '>
 						<motion.div
 							style={{ opacity }}
-							className='absolute right-1/2 font-bold tracking-tighter bottom-60 text-5xl w-150'
+							className='absolute right-1/2 font-bold tracking-tighter bottom-60 md:text-5xl md:w-150'
 						>
 							Functional web applications, including a To-Do List, Weather App,
 							E-Commerce Cart, Expense Tracker, Calculator, and Quiz App.
 						</motion.div>
 						<motion.div
 							style={{ opacity }}
-							className='absolute left-2/3 font-bold tracking-tighter bottom-20 text-5xl w-150'
+							className='absolute md:left-2/3 left-1/2 font-bold tracking-tighter bottom-25 md:bottom-20 md:text-5xl md:w-150'
 						>
 							The site serves as both a learning tool and a demonstration of
 							practical frontend development abilities.
 						</motion.div>
 					</div>
-					<div className='text-2xl font-bold justify-center flex items-center gap-10 mt-60'>
+					<div className='md:text-2xl font-bold justify-center flex items-center gap-10 mt-60'>
 						<a
 							href={link}
 							target='_blank'
-							className={`border-4 border-black  p-5 rounded-4xl flex items-center gap-2 cursor-pointer transition duration-200 hover:text-slate-800 hover:bg-black hover:text-white`}
+							className={`md:border-4 border-2 border-black p-2  md:p-5 rounded-4xl flex items-center gap-2 cursor-pointer transition duration-200 hover:text-[#FFBEBE] hover:bg-white `}
 						>
-							LIVE DEMO <CircleArrowRight size={35} />
+							LIVE DEMO <CircleArrowRight className='md:w-[35px] w-5' />
 						</a>
 						<a
 							href={gitHub}
 							target='_blank'
-							className={`border-4 border-black  p-5 rounded-4xl flex items-center gap-2 cursor-pointer transition duration-200 hover:text-slate-800 hover:bg-black hover:text-white`}
+							className={`md:border-4 border-2 border-black p-2  md:p-5 rounded-4xl flex items-center gap-2 cursor-pointer transition duration-200 hover:text-[#FFBEBE] hover:bg-white `}
 						>
-							REPOSITORY <Github size={35} />
+							REPOSITORY <Github className='md:w-[35px] w-5' />
 						</a>
 					</div>
 				</div>
-				<div className='flex justify-center items-center mt-15 gap-20 text-2xl'>
+				<div className='flex justify-center items-center mt-15 md:gap-20 gap-10 text-xs md:text-2xl'>
 					<Link
 						to={'/'}
 						className='flex items-center gap-2 hover:underline transition duration-200 cursor-pointer'
 					>
-						<House />
+						<House className='w-4 md:w-auto' />
 						BACK TO HOME
 					</Link>
 					<Link
 						to={'/projects'}
 						className='flex items-center gap-2 hover:underline transition duration-200 cursor-pointer'
 					>
-						BACK TO PROJECTS <Undo2 />
+						BACK TO PROJECTS <Undo2 className='w-4 md:w-auto' />
 					</Link>
 				</div>
 				<GetInTouch bg={color} color='#000' />

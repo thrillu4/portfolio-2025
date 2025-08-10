@@ -92,12 +92,12 @@ const About = () => {
 	]
 
 	return (
-		<div className=' bg-white'>
+		<div className=' bg-white overflow-x-hidden'>
 			<motion.div
 				style={{ borderBottomLeftRadius, borderBottomRightRadius }}
 				className='bg-black'
 			>
-				<div ref={container} className='container relative'>
+				<div ref={container} className='md:container md:mx-auto relative'>
 					<motion.h2
 						style={{
 							WebkitTextStroke: '3px #000',
@@ -109,7 +109,7 @@ const About = () => {
 						onAnimationComplete={() => {
 							window.scrollTo({ top: 0, left: 0 })
 						}}
-						className=' z-40 relative text-9xl text-center flex justify-center items-center font-extrabold h-screen'
+						className=' z-40 relative text-6xl md:text-9xl text-center flex justify-center items-center font-extrabold h-screen'
 					>
 						ABOUT ME
 					</motion.h2>
@@ -118,30 +118,30 @@ const About = () => {
 						style={{ x: x1, rotate: rotateLeft }}
 						src={wheel}
 						alt='photo'
-						className='absolute z-30 top-0 left-1/2 -translate-x-1/2  h-200  rounded-2xl'
+						className='absolute z-30 top-50  md:top-0 left-40 md:left-1/2 md:-translate-x-1/2  md:h-200 h-80  rounded-2xl'
 					/>
 					<motion.img
 						style={{ x: x2, rotate: rotateRight }}
 						src={me}
 						alt='photo'
-						className='absolute z-10 top-20 right-1/2 translate-x-1/2  h-200 rounded-2xl'
+						className='absolute z-10 top-60  md:top-20 right-4/5 md:right-1/2 translate-x-1/2  md:h-200 h-80 rounded-2xl'
 					/>
 
 					<motion.div
 						style={{ opacity: textOpacity }}
-						className='text-center flex flex-col gap-6 z-0 text-3xl font-bold mb-20 mt-10 relative'
+						className='text-center flex flex-col gap-6 z-0 md:text-3xl font-bold mb-20 mt-10 relative px-2 md:px-0'
 					>
 						<motion.img
 							style={{ x: xLeft }}
 							src={stack}
 							alt='Decoration'
-							className='absolute -left-10 top-70 w-70 -z-10 -rotate-5'
+							className='absolute left-0 md:-left-10 -bottom-30 md:top-70 w-25 md:w-70 -z-10 -rotate-5'
 						/>
 						<motion.img
 							style={{ x: xRight }}
 							src={coffee}
 							alt='Decoration'
-							className='absolute -right-10 top-70 w-60 -z-10 rotate-5'
+							className='absolute -right-2 md:-right-10 -bottom-35 md:top-70 w-25 md:w-60 -z-10 rotate-5'
 						/>
 						<p>
 							Hi! I'm Denis, a frontend developer passionate about building
@@ -186,20 +186,22 @@ const About = () => {
 							}}
 							src={swing}
 							alt='Decoration'
-							className='absolute right-[48%] translate-x-1/2  top-17 w-50'
+							className='absolute right-[43%] md:right-[48%] translate-x-1/2 top-11  md:top-17 md:w-50 w-25'
 						/>
 					</div>
 				</div>
 				<div ref={refY} className='container pb-20'>
 					<motion.h4
 						style={{ y }}
-						className='text-8xl mt-50 mb-30 text-center font-extrabold  tracking-tighter'
+						className='text-5xl px-2 md:px-0 md:text-8xl mt-50 mb-15 md:mb-30 text-center font-extrabold  tracking-tighter'
 					>
 						Under the Hood
 					</motion.h4>
-					<div className='mb-30'>
-						<div className='text-4xl mb-10 font-bold'>TECHNICAL SKILLS:</div>
-						<div className='grid grid-cols-5 gap-5'>
+					<div className='mb-15 md:mb-30'>
+						<div className='text-2xl md:text-4xl mb-10 font-bold'>
+							TECHNICAL SKILLS:
+						</div>
+						<div className='grid grid-cols-2 gap-2 md:grid-cols-5 md:gap-5 px-4 md:px-0'>
 							{techList.map((tech, i) => (
 								<TechBox
 									key={tech.title}
@@ -210,17 +212,17 @@ const About = () => {
 							))}
 						</div>
 
-						<div className='text-4xl mt-30 mb-10 font-bold relative'>
+						<div className='text-2xl md:text-4xl mt-20 md:mt-30 mb-10 font-bold relative px-4 md:px-0'>
 							SOFT SKILLS:
 							<motion.img
 								style={{ x: xRightSkills }}
 								src={skills}
 								alt='Decoration'
-								className='absolute right-0 -top-10  w-75'
+								className='absolute right-2 md:right-0 md:-top-10 -top-18 w-30  md:w-75'
 							/>
 						</div>
 
-						<div className='text-3xl font-medium flex flex-col gap-2'>
+						<div className='md:text-3xl font-medium flex flex-col gap-2  px-4 md:px-0'>
 							<div>
 								👨‍💻{' '}
 								<span className='font-extrabold'>
@@ -253,17 +255,18 @@ const About = () => {
 							style={{ x: xLeftBooks }}
 							src={books}
 							alt='Decoration'
-							className='absolute left-0 -top-15  w-55'
+							className='absolute left-3 md:left-0 md:-top-15 bottom-22 w-15  md:w-55'
 						/>
 						<Button to='/'>
 							<div className='flex items-center gap-3'>
-								DOWNLOAD CV <Download size={30} />
+								DOWNLOAD CV{' '}
+								<Download className='md:w-[30px] md:h-[30px] w-5 ' />
 							</div>
 						</Button>
-						<div className='flex items-center justify-center gap-10 mt-10'>
+						<div className='flex items-center justify-center gap-10 mt-5 md:mt-10'>
 							<a href='https://github.com/thrillu4' target='_blank'>
 								<img
-									className='cursor-pointer hover:scale-110 transition duration-150'
+									className='cursor-pointer w-8 md:w-full hover:scale-110 transition duration-150'
 									src={github}
 									alt='github'
 								/>
@@ -273,14 +276,14 @@ const About = () => {
 								target='_blank'
 							>
 								<img
-									className='cursor-pointer hover:scale-110 transition duration-150'
+									className='cursor-pointer w-8 md:w-full hover:scale-110 transition duration-150'
 									src={linkedIn}
 									alt='Linked In'
 								/>
 							</a>
 							<a href='https://t.me/real_thrill' target='_blank'>
 								<img
-									className='cursor-pointer hover:scale-110 transition duration-150'
+									className='cursor-pointer w-8 md:w-full hover:scale-110 transition duration-150'
 									src={telegram}
 									alt='telegram'
 								/>

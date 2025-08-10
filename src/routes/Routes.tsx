@@ -7,7 +7,6 @@ import Home from '../pages/Home'
 import LiveProjects from '../pages/LiveProjects'
 import NotFound from '../pages/NotFound'
 import Projects from '../pages/Projects'
-import Skills from '../pages/Skills'
 import TaskManager from '../pages/TaskManager'
 
 const ProjectRoutes = () => {
@@ -16,7 +15,6 @@ const ProjectRoutes = () => {
 			<Route path='*' element={<NotFound />} />
 			<Route path='/' element={<Home />} />
 			<Route path='/about' element={<About />} />
-			<Route path='/skills' element={<Skills />} />
 			<Route path='/projects' element={<Projects />} />
 			<Route path='/projects/furniro' element={<Furniro />} />
 			<Route path='/projects/task-manager' element={<TaskManager />} />

@@ -22,11 +22,11 @@ const AboutSection = () => {
 	const y = useTransform(scrollYProgress, [0.4, 1], ['-150px', '0px'])
 
 	return (
-		<section className='about h-screen overflow-x-hidden mt-50'>
+		<section className='about h-full md:h-screen overflow-x-hidden mt-30 md:mt-50'>
 			<div ref={container} className=' relative container'>
 				<motion.h2
 					style={{ opacity: aboutOpacity }}
-					className=' text-9xl bg-gradient-to-b from-[#374242] to-stone-200 text-transparent bg-clip-text text-center font-extrabold'
+					className='text-5xl md:text-9xl bg-gradient-to-b from-[#374242] to-stone-200 text-transparent bg-clip-text text-center font-extrabold'
 				>
 					ABOUT ME
 				</motion.h2>
@@ -34,20 +34,20 @@ const AboutSection = () => {
 				<motion.img
 					src={nose}
 					alt='Right Decoration'
-					className='absolute -left-10 w-50 -rotate-8'
+					className='absolute -left-5 md:-left-10 w-20 md:w-50 -rotate-8'
 					style={{ x: xLeft }}
 				/>
 
 				<motion.img
 					src={cap}
 					alt='Right Decoration'
-					className='absolute -right-10 w-50 rotate-6'
+					className='absolute -right-5 md:-right-10 w-20 md:w-50 rotate-6'
 					style={{ x: xRight }}
 				/>
 
 				<motion.p
 					style={{ opacity: pOpacity }}
-					className='relative font-medium leading-loose my-15 text-2xl max-w-6xl text-center mx-auto'
+					className='text-sm px-10 relative font-medium leading-loose mt-15 mb-5 md:mt-15 md:mb-15 md:text-2xl max-w-6xl text-center mx-auto'
 				>
 					I'm Denys, a frontend developer who takes pride in writing clean,
 					thoughtful code and creating user-friendly interfaces. For me,
@@ -62,16 +62,16 @@ const AboutSection = () => {
 				<motion.img
 					src={cup}
 					alt='Right Decoration'
-					className='absolute left-20 w-50 rotate-6'
+					className='absolute md:left-20 w-20 md:w-50 rotate-6'
 					style={{ x: xRight }}
 				/>
 				<motion.img
 					src={smile}
 					alt='Right Decoration'
-					className='absolute right-10 w-50 rotate-12'
+					className='absolute right-0 md:right-10 w-20 md:w-50 rotate-12'
 					style={{ x: xLeft }}
 				/>
-				<div className='relative'>
+				<div className='relative pb-30 md:pb-0'>
 					<Button to='/about'>EXPLORE MORE</Button>
 					<div>
 						<motion.img
@@ -95,7 +95,7 @@ const AboutSection = () => {
 								},
 							}}
 							alt='Right Decoration'
-							className='absolute left-1/2 -translate-x-1/2 top-16  w-50 -z-30'
+							className='absolute left-1/2 -translate-x-1/2 md:top-16  w-20 md:w-50 -z-30'
 							style={{ y }}
 						/>
 					</div>

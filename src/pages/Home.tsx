@@ -68,26 +68,28 @@ const Home = () => {
 					initial={{ opacity: 0.1 }}
 					animate={{ opacity: 1 }}
 					transition={{ duration: 0.6, ease: 'easeIn' }}
-					className='text-[200px] absolute left-[8%] leading-none pointer-events-none font-extrabold text-center bg-gradient-to-b from-[#3b4242] to-stone-200 text-transparent bg-clip-text'
+					className='md:text-[200px] text-6xl pt-20 md:pt-0 md:absolute left-[8%]  leading-none pointer-events-none font-extrabold text-center bg-gradient-to-b from-[#3b4242] to-stone-200 text-transparent bg-clip-text'
 				>
 					HI, I'M DENYS
 				</motion.h1>
-				<div className='flex items-center justify-evenly mb-40 pt-30'>
-					<p className=' text-2xl grow-1 basis-0 flex justify-center font-medium text-right leading-normal'>
+				<div className='flex flex-col md:flex-row  items-center justify-evenly gap-5 md:gap-0 mb-40 pt-5 md:pt-30'>
+					<p className=' md:text-2xl grow-1 basis-0 flex justify-center font-medium text-center md:text-right leading-normal order-2 md:order-none'>
 						Frontend Developer in progress. <br />
 						Clean code. Smooth UI. Real-world solutions. <br />
 						Always learning. Always improving. 🚀
 					</p>
-					<motion.img
-						style={{
-							x: springX,
-							y: springY,
-						}}
-						src={icon}
-						alt='Moving Image'
-						className='w-130 '
-					/>
-					<div className='grow-1 basis-0'>
+					<div className='w-70 md:w-130  h-auto'>
+						<motion.img
+							style={{
+								x: springX,
+								y: springY,
+							}}
+							src={icon}
+							alt='Moving Image'
+							className='w-full h-full order-1 md:order-none'
+						/>
+					</div>
+					<div className='grow-1 basis-0 order-3 md:order-none'>
 						<Button to='/contact'>CONTACT ME</Button>
 					</div>
 				</div>
@@ -101,12 +103,12 @@ const Home = () => {
 				<div className='mt-40'>
 					<motion.h2
 						style={{ opacity: projectsOpacity }}
-						className=' text-9xl bg-gradient-to-b from-[#374242] to-stone-200 text-transparent bg-clip-text text-center font-extrabold'
+						className='text-5xl md:text-9xl bg-gradient-to-b from-[#374242] to-stone-200 text-transparent bg-clip-text text-center font-extrabold'
 					>
 						PROJECTS
 					</motion.h2>
 				</div>
-				<div ref={container} className='mt-20'>
+				<div ref={container} className='md:mt-20'>
 					{projects.map((project, index) => {
 						const targetScale = 1 - (projects.length - index) * 0.05
 						return (

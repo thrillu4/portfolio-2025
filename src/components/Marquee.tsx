@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
+import useMediaQuery from '../hooks/useMediaQuery'
 
 const Marquee = () => {
 	const greetings = [
@@ -16,6 +17,13 @@ const Marquee = () => {
 		'السلام عليكم',
 	]
 
+	const isMobile = useMediaQuery('(max-width: 640px)')
+	const isTablet = useMediaQuery('(min-width: 641px) and (max-width: 1024px)')
+
+	let animateX = [0, -11000]
+	if (isMobile) animateX = [0, -4000]
+	else if (isTablet) animateX = [0, -7000]
+
 	const container = useRef(null)
 
 	const { scrollYProgress } = useScroll({
@@ -25,12 +33,12 @@ const Marquee = () => {
 	const borderBottomLeftRadius = useTransform(
 		scrollYProgress,
 		[0, 1],
-		['70px', '0px']
+		['50px', '0px']
 	)
 	const borderBottomRightRadius = useTransform(
 		scrollYProgress,
 		[0, 1],
-		['70px', '0px']
+		['50px', '0px']
 	)
 	return (
 		<div ref={container} className='bg-white  w-full'>
@@ -38,10 +46,10 @@ const Marquee = () => {
 				style={{ borderBottomLeftRadius, borderBottomRightRadius }}
 				className='bg-black'
 			>
-				<div className='overflow-hidden text-[270px] font-["Anton"] tracking-tight font-bold pt-30 pb-40'>
+				<div className='overflow-hidden text-8xl md:text-[270px] font-["Anton"] tracking-tight font-bold py-50'>
 					<motion.div
 						className='whitespace-nowrap flex gap-10'
-						animate={{ x: [0, -11000] }}
+						animate={{ x: animateX }}
 						transition={{
 							duration: 40,
 							repeat: Infinity,

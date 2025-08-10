@@ -37,13 +37,15 @@ const TechRow = ({
 	translateX: MotionValue<number>
 }) => (
 	<motion.div style={{ x: translateX }} className='flex whitespace-nowrap'>
-		<div className='px-5 flex gap-10 items-center'>
+		<div className='px-5 flex gap-4 md:gap-10 items-center'>
 			{[...items, ...items].map((tech, idx) => (
 				<div key={idx} className='flex items-center gap-5'>
-					<span className='w-24 aspect-[4/2] rounded-full '>
+					<span className='w-7 md:w-24 aspect-[4/2] rounded-full '>
 						<img src={tech.icon} alt={tech.label} />
 					</span>
-					<p className='text-8xl font-bold whitespace-nowrap'>{tech.label}</p>
+					<p className='md:text-8xl text-2xl font-bold whitespace-nowrap'>
+						{tech.label}
+					</p>
 				</div>
 			))}
 		</div>
