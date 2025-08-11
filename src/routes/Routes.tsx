@@ -1,13 +1,14 @@
+import { lazy } from 'react'
 import { Route, Routes } from 'react-router'
-import About from '../pages/About'
-import Contact from '../pages/Contact'
-import Furniro from '../pages/Furniro'
-import GodOfWar from '../pages/GodOfWar'
-import Home from '../pages/Home'
-import LiveProjects from '../pages/LiveProjects'
-import NotFound from '../pages/NotFound'
-import Projects from '../pages/Projects'
-import TaskManager from '../pages/TaskManager'
+const About = lazy(() => import('../pages/About'))
+const Contact = lazy(() => import('../pages/Contact'))
+const Furniro = lazy(() => import('../pages/Furniro'))
+const GodOfWar = lazy(() => import('../pages/GodOfWar'))
+const Home = lazy(() => import('../pages/Home'))
+const LiveProjects = lazy(() => import('../pages/LiveProjects'))
+const NotFound = lazy(() => import('../pages/NotFound'))
+const Projects = lazy(() => import('../pages/Projects'))
+const TaskManager = lazy(() => import('../pages/TaskManager'))
 
 const ProjectRoutes = () => {
 	return (

@@ -5,13 +5,12 @@ import notFound from '../images/404/404.png'
 import clown from '../images/404/clown.png'
 import ghost from '../images/404/ghost.png'
 import ghosty from '../images/404/ghosty.png'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const NotFound = () => {
 	return (
-		<div className='relative md:h-screen mx-auto overflow-hidden md:overflow-visible  py-25 md:py-0'>
-			<motion.img
-				className='md:w-50 w-25 absolute left-1/12  top-30'
-				src={ghost}
+		<div className='relative md:h-screen mx-auto overflow-hidden lg:overflow-visible  py-25 md:py-0 lg:mb-20'>
+			<motion.div
 				animate={{
 					y: [-50, 240],
 					x: [-150, 140],
@@ -37,10 +36,12 @@ const NotFound = () => {
 						ease: 'easeInOut',
 					},
 				}}
-			/>
-			<motion.img
-				src={ghosty}
-				className='md:w-50 w-25 absolute right-1/12  top-50'
+				className='xl:w-50 md:w-35 w-25 absolute left-1/12  top-30'
+			>
+				<LazyLoadImage src={ghost} alt='ghost' />
+			</motion.div>
+			<motion.div
+				className='md:w-35 xl:w-50 w-25 absolute right-1/12  top-50'
 				animate={{
 					y: [250, -240],
 					x: [150, -240],
@@ -66,16 +67,18 @@ const NotFound = () => {
 						ease: 'easeInOut',
 					},
 				}}
-			/>
-			<div className='md:w-170 w-full mx-auto text-center font-extrabold md:text-6xl text-4xl'>
-				<motion.img src={notFound} alt='not found!' />
+			>
+				<LazyLoadImage src={ghosty} alt='ghosty' />
+			</motion.div>
+			<div className='lg:w-170 w-full md:w-120 mx-auto text-center font-extrabold lg:text-6xl text-4xl'>
+				<LazyLoadImage src={notFound} alt='not found!' />
 				<motion.div className='mb-10'>Oops! Page not found!</motion.div>
 				<Link
 					className='mb-20 relative text-xl md:text-3xl inline-flex items-center gap-3 border-2 font-bold border-white rounded-4xl py-3 px-6 hover:text-black hover:bg-white transition duration-100'
 					to='/'
 				>
 					BACK TO HOME <House size={30} />
-					<motion.img
+					<motion.div
 						animate={{
 							x: [-15, 15],
 							rotate: [10, -10],
@@ -94,9 +97,10 @@ const NotFound = () => {
 								ease: 'easeInOut',
 							},
 						}}
-						src={clown}
-						className='absolute top-14 right-1/2 translate-x-1/2  md:w-50 w-20'
-					/>
+						className='absolute top-14 right-1/2 translate-x-1/2 md:w-35  xl:w-50 w-20'
+					>
+						<LazyLoadImage src={clown} alt='clown' />
+					</motion.div>
 				</Link>
 			</div>
 		</div>

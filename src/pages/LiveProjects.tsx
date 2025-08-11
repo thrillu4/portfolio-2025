@@ -110,6 +110,7 @@ const LiveProjects = () => {
 						id='tsparticles'
 						options={options}
 						className='relative -z-60'
+						
 					/>
 				)}
 
@@ -118,7 +119,7 @@ const LiveProjects = () => {
 						initial={{ y: '60px', opacity: 0 }}
 						animate={{ y: '0px', opacity: 1 }}
 						transition={{ duration: 1, delay: 1, ease: 'easeIn' }}
-						className='text-2xl md:text-5xl text-center font-medium'
+						className='text-2xl md:text-3xl lg:text-5xl text-center font-medium'
 					>
 						{type} - 2025
 					</motion.h3>
@@ -126,23 +127,23 @@ const LiveProjects = () => {
 						initial={{ y: '60px', opacity: 0 }}
 						animate={{ y: '0px', opacity: 1 }}
 						transition={{ duration: 1, delay: 1, ease: 'easeIn' }}
-						className='text-7xl md:text-[300px] font-[Anton] tracking-tight text-center md:leading-75'
+						className='text-7xl md:text-[200px] lg:text-[250px] 2xl:text-[300px] font-[Anton] tracking-tight text-center  lg:leading-75'
 					>
 						HANDLE LIVE <br /> PROJECTS
 					</motion.h1>
 				</div>
 				<div>
-					<div className=' relative md:w-200 w-full mx-auto '>
+					<div className=' relative xl:w-200 w-full mx-auto '>
 						<motion.div
 							style={{ opacity }}
-							className='absolute right-1/2 font-bold tracking-tighter bottom-60 md:text-5xl md:w-150'
+							className='absolute right-1/2 font-bold tracking-tighter bottom-60 md:text-2xl lg:text-5xl xl:w-150'
 						>
 							Functional web applications, including a To-Do List, Weather App,
 							E-Commerce Cart, Expense Tracker, Calculator, and Quiz App.
 						</motion.div>
 						<motion.div
 							style={{ opacity }}
-							className='absolute md:left-2/3 left-1/2 font-bold tracking-tighter bottom-25 md:bottom-20 md:text-5xl md:w-150'
+							className='absolute lg:left-2/3 left-1/2 font-bold tracking-tighter bottom-25 md:bottom-20 md:text-2xl lg:text-5xl xl:w-150'
 						>
 							The site serves as both a learning tool and a demonstration of
 							practical frontend development abilities.

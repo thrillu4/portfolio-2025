@@ -3,6 +3,7 @@ import { projects } from '../data/projects'
 import CustomCursor from './CustomCursor'
 import { motion, useScroll, useTransform } from 'motion/react'
 import { Link } from 'react-router'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const ProjectsGrid = () => {
 	const [hovered, setHovered] = useState<number | null>(null)
@@ -18,13 +19,17 @@ const ProjectsGrid = () => {
 	return (
 		<div
 			ref={container}
-			className={`grid md:grid-cols-2 gap-y-10 md:gap-y-30 gap-x-10 relative items-stretch ${
+			className={`grid xl:grid-cols-2 gap-y-10 xl:gap-y-30 gap-x-10 lg:w-11/12 xl:w-full lg:mx-auto relative items-stretch ${
 				hovered === null ? 'cursor-default' : 'md:cursor-none'
 			}`}
 		>
 			<CustomCursor visible={hovered} />
 			{projects.map((project, i) => (
-				<Link className='md:cursor-none' to={`/projects/${project.route}`}>
+				<Link
+					key={i}
+					className='md:cursor-none'
+					to={`/projects/${project.route}`}
+				>
 					<motion.div
 						onMouseEnter={() => setHovered(i)}
 						onMouseLeave={() => setHovered(null)}
@@ -34,22 +39,27 @@ const ProjectsGrid = () => {
 						}}
 						className={`border-4 border-white p-10 text-center h-full w-full`}
 					>
-						<div className='font-medium md:text-4xl'>{project.type}</div>
-						<div className='font-extrabold tracking-tighter text-4xl md:text-9xl mt-5'>
+						<div className='font-medium md:text-3xl lg:text-4xl'>
+							{project.type}
+						</div>
+						<div className='font-extrabold tracking-tighter text-4xl md:text-7xl 2xl:text-8xl mt-5'>
 							{project.title}
 						</div>
-						<div className='mt-4 text-center w-full md:h-200'>
-							<img
+						<div className='mt-4 text-center w-full  md:h-200 '>
+							<LazyLoadImage
 								src={project.src}
-								className='h-full object-fit mx-auto'
+								className='h-full object-cover mx-auto'
 								alt={project.title}
 							/>
 						</div>
 
 						<div className='flex items-center md:gap-5 gap-2 justify-center mt-10 flex-wrap'>
 							{project.techStack.map((tech, i) => (
-								<div className='border-1 border-zinc-600 flex items-center gap-2 text-[10px] md:text-2xl rounded-2xl py-2 md:px-5 px-2'>
-									<img
+								<div
+									key={i}
+									className='border-1 border-zinc-600 flex items-center gap-2 text-[10px] md:text-2xl rounded-2xl py-2 md:px-5 px-2'
+								>
+									<LazyLoadImage
 										className='w-4 md:w-8'
 										src={project.logos[i]}
 										alt={tech}

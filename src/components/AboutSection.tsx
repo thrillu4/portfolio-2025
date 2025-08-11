@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import cap from '../images/mess/cap.png'
 import cup from '../images/mess/cup.png'
 import flying from '../images/mess/flying.png'
@@ -22,28 +23,32 @@ const AboutSection = () => {
 	const y = useTransform(scrollYProgress, [0.4, 1], ['-150px', '0px'])
 
 	return (
-		<section className='about h-full md:h-screen overflow-x-hidden mt-30 md:mt-50'>
+		<section className='about h-full xl:h-screen overflow-hidden xl:overflow-visible mt-30 md:mt-50'>
 			<div ref={container} className=' relative container'>
 				<motion.h2
 					style={{ opacity: aboutOpacity }}
-					className='text-5xl md:text-9xl bg-gradient-to-b from-[#374242] to-stone-200 text-transparent bg-clip-text text-center font-extrabold'
+					className='text-5xl md:text-7xl xl:text-9xl bg-gradient-to-b from-[#374242] to-stone-200 text-transparent bg-clip-text text-center font-extrabold'
 				>
 					ABOUT ME
 				</motion.h2>
 
-				<motion.img
-					src={nose}
-					alt='Right Decoration'
-					className='absolute -left-5 md:-left-10 w-20 md:w-50 -rotate-8'
-					style={{ x: xLeft }}
-				/>
+				<motion.div style={{ x: xLeft }}>
+					<LazyLoadImage
+						src={nose}
+						alt='Right Decoration'
+						effect='opacity'
+						className='absolute -left-5 xl:-left-10 w-20 md:w-30 xl:w-50 -rotate-8'
+					/>
+				</motion.div>
 
-				<motion.img
-					src={cap}
-					alt='Right Decoration'
-					className='absolute -right-5 md:-right-10 w-20 md:w-50 rotate-6'
-					style={{ x: xRight }}
-				/>
+				<motion.div style={{ x: xRight }}>
+					<LazyLoadImage
+						src={cap}
+						effect='opacity'
+						alt='Right Decoration'
+						className='absolute -right-5 xl:-right-10 w-20 md:w-30  xl:w-50 rotate-6'
+					/>
+				</motion.div>
 
 				<motion.p
 					style={{ opacity: pOpacity }}
@@ -59,46 +64,52 @@ const AboutSection = () => {
 					challenges and environments where I can learn, improve, and
 					contribute. Growth is what drives me — as a developer and as a person.
 				</motion.p>
-				<motion.img
-					src={cup}
-					alt='Right Decoration'
-					className='absolute md:left-20 w-20 md:w-50 rotate-6'
-					style={{ x: xRight }}
-				/>
-				<motion.img
-					src={smile}
-					alt='Right Decoration'
-					className='absolute right-0 md:right-10 w-20 md:w-50 rotate-12'
-					style={{ x: xLeft }}
-				/>
-				<div className='relative pb-30 md:pb-0'>
+				<motion.div style={{ x: xRight }}>
+					<LazyLoadImage
+						src={cup}
+						effect='opacity'
+						alt='Right Decoration'
+						className='absolute xl:left-20 w-20 md:w-30  xl:w-50 rotate-6'
+					/>
+				</motion.div>
+				<motion.div style={{ x: xLeft }}>
+					<LazyLoadImage
+						src={smile}
+						effect='opacity'
+						alt='Right Decoration'
+						className='absolute right-0 xl:right-10 w-20 md:w-30  xl:w-50 rotate-12'
+					/>
+				</motion.div>
+				<div className='relative pb-30 xl:pb-0'>
 					<Button to='/about'>EXPLORE MORE</Button>
-					<div>
-						<motion.img
+					<motion.div
+						style={{ y }}
+						animate={{
+							x: [-10, -10],
+							rotate: [3, -3],
+						}}
+						transition={{
+							x: {
+								duration: 1,
+								repeat: Infinity,
+								repeatType: 'reverse',
+								ease: 'easeInOut',
+							},
+							rotate: {
+								duration: 1,
+								repeat: Infinity,
+								repeatType: 'reverse',
+								ease: 'easeInOut',
+							},
+						}}
+						className='absolute left-1/2 -translate-x-1/2 xl:top-16  w-20 md:w-22  xl:w-50 -z-30'
+					>
+						<LazyLoadImage
 							src={flying}
-							animate={{
-								x: [-10, -10],
-								rotate: [3, -3],
-							}}
-							transition={{
-								x: {
-									duration: 1,
-									repeat: Infinity,
-									repeatType: 'reverse',
-									ease: 'easeInOut',
-								},
-								rotate: {
-									duration: 1,
-									repeat: Infinity,
-									repeatType: 'reverse',
-									ease: 'easeInOut',
-								},
-							}}
+							effect='opacity'
 							alt='Right Decoration'
-							className='absolute left-1/2 -translate-x-1/2 md:top-16  w-20 md:w-50 -z-30'
-							style={{ y }}
 						/>
-					</div>
+					</motion.div>
 				</div>
 			</div>
 		</section>

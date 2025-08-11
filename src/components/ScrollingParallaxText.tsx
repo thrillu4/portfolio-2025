@@ -1,6 +1,6 @@
 import { motion, MotionValue, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
-
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import techLogos from '../images/tech-logo'
 import type { ITechStack } from '../types'
 
@@ -40,10 +40,10 @@ const TechRow = ({
 		<div className='px-5 flex gap-4 md:gap-10 items-center'>
 			{[...items, ...items].map((tech, idx) => (
 				<div key={idx} className='flex items-center gap-5'>
-					<span className='w-7 md:w-24 aspect-[4/2] rounded-full '>
-						<img src={tech.icon} alt={tech.label} />
+					<span className='w-7 md:w-15 xl:w-24 aspect-[4/2] rounded-full '>
+						<LazyLoadImage src={tech.icon} alt={tech.label} effect='opacity' />
 					</span>
-					<p className='md:text-8xl text-2xl font-bold whitespace-nowrap'>
+					<p className='xl:text-8xl md:text-5xl text-2xl font-bold whitespace-nowrap'>
 						{tech.label}
 					</p>
 				</div>
@@ -64,7 +64,7 @@ export default function ScrollingParallaxText() {
 	const translateX3 = useTransform(scrollYProgress, [0, 1], [-600, -310])
 
 	return (
-		<main className='overflow-hidden'>
+		<main className='overflow-hidden xl:overflow-visible'>
 			<div className='flex flex-col gap-5' ref={container}>
 				<TechRow items={techStacks[0]} translateX={translateX1} />
 				<TechRow items={techStacks[1]} translateX={translateX2} />

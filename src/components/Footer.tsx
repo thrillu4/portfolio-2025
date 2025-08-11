@@ -4,6 +4,7 @@ import github from '../images/links/github.png'
 import instagram from '../images/links/instagram.png'
 import linkedin from '../images/links/linkedin.png'
 import telegram from '../images/links/telegram.png'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const Footer = () => {
 	const container = useRef(null)
@@ -21,37 +22,41 @@ const Footer = () => {
 		{
 			label: 'TELEGRAM',
 			img: telegram,
+			alt: 'telegram logo',
 		},
 		{
 			label: 'LINKEDIN',
 			img: linkedin,
+			alt: 'linked in logo',
 		},
 		{
 			label: 'GITHUB',
 			img: github,
+			alt: 'git hub logo',
 		},
 		{
 			label: 'INSTAGRAM',
 			img: instagram,
+			alt: 'instagram logo',
 		},
 	]
 
 	return (
 		<footer className=' relative z-50'>
 			<div ref={container}>
-				<div className='md:container overflow-x-hidden mx-auto pt-10 md:pt-20 pb-10 flex items-center flex-col md:flex-row gap-10 md:gap-0 justify-between'>
+				<div className='md:container overflow-x-hidden md:overflow-x-visible mx-auto pt-10 md:pt-20 pb-10 flex items-center flex-col lg:flex-row gap-10 lg:gap-0 justify-between'>
 					<div
 						style={{
 							WebkitTextStroke: '1px #fff',
 							color: '#000',
 						}}
-						className='font-extrabold text-4xl md:text-9xl tracking-tighter'
+						className='font-extrabold text-4xl md:text-7xl xl:text-9xl tracking-tighter'
 					>
 						<motion.div style={{ x: name, opacity }}>DENYS</motion.div>
 						<motion.div style={{ x: surname, opacity }}>KRAIOVYI</motion.div>
 					</div>
 
-					<div className='flex gap-10 md:gap-50'>
+					<div className='flex gap-10 md:gap-50 justify-between '>
 						<div className='flex flex-col items-center gap-4'>
 							<div className='md:text-2xl font-bold'>SOCIAL</div>
 							<ul className='flex flex-col gap-3'>
@@ -62,7 +67,12 @@ const Footer = () => {
 											target='_blank'
 											className='flex items-center text-xs md:text-base gap-1 hover:underline transition duration-300'
 										>
-											<img className='w-5' src={link.img} alt='telegram' />
+											<LazyLoadImage
+												className='w-5'
+												width={20}
+												src={link.img}
+												alt={link.alt}
+											/>
 											{link.label}
 										</a>
 									</li>

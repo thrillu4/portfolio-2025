@@ -25,7 +25,7 @@ const GodOfWar = () => {
 						initial={{ y: '60px', opacity: 0 }}
 						animate={{ y: '0px', opacity: 1 }}
 						transition={{ duration: 1, delay: 1, ease: 'easeIn' }}
-						className='text-2xl md:text-5xl text-center font-medium'
+						className='text-2xl md:text-3xl lg:text-5xl text-center font-medium'
 					>
 						{type} - 2023
 					</motion.h3>
@@ -33,14 +33,15 @@ const GodOfWar = () => {
 						initial={{ y: '60px', opacity: 0 }}
 						animate={{ y: '0px', opacity: 1 }}
 						transition={{ duration: 1, delay: 1, ease: 'easeIn' }}
-						className='text-7xl md:text-[300px] font-[Anton] tracking-tight text-center md:leading-75'
+						className='text-7xl md:text-[200px] lg:text-[250px] 2xl:text-[300px] font-[Anton] tracking-tight text-center lg:leading-75'
 					>
 						GOD OF WAR <br /> Ragnarök
 					</motion.h1>
 				</div>
 				<div>
-					<div className=' relative md:w-200 w-screen mx-auto'>
+					<div className=' relative lg:w-200 w-screen mx-auto'>
 						<motion.img
+							loading='lazy'
 							style={{ y, scale, rotate }}
 							src={bg}
 							alt={title}
@@ -48,13 +49,13 @@ const GodOfWar = () => {
 						/>
 						<motion.div
 							style={{ opacity }}
-							className='absolute right-1/2 font-bold tracking-tighter bottom-40 md:text-5xl md:w-150'
+							className='absolute right-1/2 font-bold tracking-tighter bottom-40 lg:text-5xl md:text-3xl xl:w-150'
 						>
 							STUNNING VISUALS AND IMPRESSIVE SCALE
 						</motion.div>
 						<motion.div
 							style={{ opacity }}
-							className='absolute left-1/2 font-bold tracking-tighter -bottom-10 md:text-5xl md:w-150'
+							className='absolute left-1/2 font-bold tracking-tighter -bottom-10 lg:text-5xl md:text-3xl xl:w-150'
 						>
 							BEAUTIFUL MOVING GAME LAYOUT
 						</motion.div>

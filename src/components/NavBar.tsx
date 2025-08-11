@@ -27,7 +27,7 @@ const NavBar = () => {
 
 	return (
 		<nav className='container relative z-90'>
-			<div className='hidden md:flex items-center justify-between text-3xl font-bold'>
+			<div className='hidden md:flex items-center justify-between md:text-2xl lg:text-3xl font-bold'>
 				{navLinks.map((link) => (
 					<NavLink
 						key={link.label}
@@ -46,8 +46,14 @@ const NavBar = () => {
 			</div>
 
 			<div className='md:hidden absolute right-4 z-60  top-4'>
-				<button className='cursor-pointer' onClick={() => setIsOpen(!isOpen)}>
-					{!isOpen && <Menu size={40} />}
+				<button
+					type='button'
+					aria-label='Navigation bar'
+					role='button'
+					className='cursor-pointer'
+					onClick={() => setIsOpen(!isOpen)}
+				>
+					{!isOpen && <Menu aria-label='Open menu' size={40} />}
 				</button>
 			</div>
 

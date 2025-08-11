@@ -65,7 +65,7 @@ export const projects: IProjects[] = [
 			'./screenshots/gow2.png',
 			'./screenshots/gow3.jpg',
 		],
-		bg: '../bg/gow.png',
+		bg: '../bg/gow.jpg',
 		route: 'godofwar',
 	},
 	{

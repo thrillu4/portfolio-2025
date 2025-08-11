@@ -17,22 +17,16 @@ import GetInTouch from '../components/GetInTouch'
 import icon from '/face.png'
 
 const Home = () => {
-	// text appear
 	const { scrollY } = useScroll()
 
 	const projectsOpacity = useTransform(scrollY, [1700, 2200], [0, 1])
 
-	//
-
-	// projects scale
 	const container = useRef(null)
 
 	const { scrollYProgress } = useScroll({
 		target: container,
 		offset: ['start start', 'end end'],
 	})
-
-	//
 
 	//  mouse event
 	const mouseX = useMotionValue(0)
@@ -63,35 +57,49 @@ const Home = () => {
 
 	return (
 		<>
-			<section className='initial container relative'>
+			<section className='initial xl:container mx-auto relative'>
 				<motion.h1
-					initial={{ opacity: 0.1 }}
-					animate={{ opacity: 1 }}
+					initial={{ opacity: 0.1, y: '200px' }}
+					animate={{ opacity: 1, y: '0px' }}
 					transition={{ duration: 0.6, ease: 'easeIn' }}
-					className='md:text-[200px] text-6xl pt-20 md:pt-0 md:absolute left-[8%]  leading-none pointer-events-none font-extrabold text-center bg-gradient-to-b from-[#3b4242] to-stone-200 text-transparent bg-clip-text'
+					className='md:text-8xl md:w-full xl:text-[180px] 2xl:text-[200px] text-6xl pt-20 md:pt-0 md:absolute md:left-1/2 md:-translate-x-1/2  leading-none pointer-events-none font-extrabold text-center bg-gradient-to-b from-[#3b4242] to-stone-200 text-transparent bg-clip-text'
 				>
 					HI, I'M DENYS
 				</motion.h1>
-				<div className='flex flex-col md:flex-row  items-center justify-evenly gap-5 md:gap-0 mb-40 pt-5 md:pt-30'>
-					<p className=' md:text-2xl grow-1 basis-0 flex justify-center font-medium text-center md:text-right leading-normal order-2 md:order-none'>
+				<div className='flex flex-col xl:flex-row  items-center justify-evenly gap-5 xl:gap-0 mb-40 pt-5 md:pt-30'>
+					<motion.p
+						initial={{ opacity: 0, x: '-150px' }}
+						animate={{ opacity: 1, x: '0px' }}
+						transition={{ duration: 0.4, ease: 'easeIn', delay: 0.3 }}
+						className=' md:text-2xl grow-1 basis-0 flex justify-center font-medium text-center xl:text-right leading-normal order-2 xl:order-none'
+					>
 						Frontend Developer in progress. <br />
 						Clean code. Smooth UI. Real-world solutions. <br />
 						Always learning. Always improving. 🚀
-					</p>
-					<div className='w-70 md:w-130  h-auto'>
+					</motion.p>
+					<div className='w-70 md:w-100 xl:w-130  h-auto'>
 						<motion.img
+							initial={{ opacity: 0, y: '100px' }}
+							animate={{ opacity: 1, y: '0px' }}
+							transition={{ duration: 0.4, ease: 'easeIn', delay: 0.3 }}
 							style={{
 								x: springX,
 								y: springY,
 							}}
 							src={icon}
 							alt='Moving Image'
-							className='w-full h-full order-1 md:order-none'
+							className='w-full h-full order-1 xl:order-none'
+							loading='lazy'
 						/>
 					</div>
-					<div className='grow-1 basis-0 order-3 md:order-none'>
+					<motion.div
+						initial={{ opacity: 0, x: '150px' }}
+						animate={{ opacity: 1, x: '0px' }}
+						transition={{ duration: 0.4, ease: 'easeIn', delay: 0.3 }}
+						className='grow-1 basis-0 order-3 xl:order-none'
+					>
 						<Button to='/contact'>CONTACT ME</Button>
-					</div>
+					</motion.div>
 				</div>
 			</section>
 
@@ -103,7 +111,7 @@ const Home = () => {
 				<div className='mt-40'>
 					<motion.h2
 						style={{ opacity: projectsOpacity }}
-						className='text-5xl md:text-9xl bg-gradient-to-b from-[#374242] to-stone-200 text-transparent bg-clip-text text-center font-extrabold'
+						className='text-5xl md:text-7xl xl:text-9xl bg-gradient-to-b from-[#374242] to-stone-200 text-transparent bg-clip-text text-center font-extrabold'
 					>
 						PROJECTS
 					</motion.h2>

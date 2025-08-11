@@ -2,19 +2,20 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import Button from '../components/Button'
 import TechBox from '../components/TechBox'
+import books from '../images/about/books.png'
+import coffee from '../images/about/coffee.png'
+import skills from '../images/about/skills.png'
+import stack from '../images/about/stack.png'
+import swing from '../images/about/swing.png'
 import github from '../images/links/github.png'
 import linkedIn from '../images/links/linkedin.png'
 import telegram from '../images/links/telegram.png'
-import swing from '../images/about/swing.png'
-import coffee from '../images/about/coffee.png'
-import stack from '../images/about/stack.png'
-import skills from '../images/about/skills.png'
-import books from '../images/about/books.png'
 import me from '../images/photos/me.jpg'
 import wheel from '../images/photos/wheel.jpg'
 import techLogo from '../images/tech-logo'
 
 import { Download } from 'lucide-react'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import Certification from '../components/Certification'
 
 const About = () => {
@@ -92,12 +93,12 @@ const About = () => {
 	]
 
 	return (
-		<div className=' bg-white overflow-x-hidden'>
+		<div className=' bg-white overflow-x-hidden xl:overflow-visible'>
 			<motion.div
 				style={{ borderBottomLeftRadius, borderBottomRightRadius }}
 				className='bg-black'
 			>
-				<div ref={container} className='md:container md:mx-auto relative'>
+				<div ref={container} className='lg:container mx-auto relative'>
 					<motion.h2
 						style={{
 							WebkitTextStroke: '3px #000',
@@ -114,35 +115,36 @@ const About = () => {
 						ABOUT ME
 					</motion.h2>
 
-					<motion.img
+					<motion.div
 						style={{ x: x1, rotate: rotateLeft }}
-						src={wheel}
-						alt='photo'
-						className='absolute z-30 top-50  md:top-0 left-40 md:left-1/2 md:-translate-x-1/2  md:h-200 h-80  rounded-2xl'
-					/>
-					<motion.img
+						className='absolute z-30 top-50  md:top-0 left-1/2 sm:left-1/3 md:left-1/2 md:-translate-x-1/2  lg:h-200 sm:h-120 md:h-170 h-80 rounded-2xl'
+					>
+						<LazyLoadImage src={wheel} alt='photo' />
+					</motion.div>
+					<motion.div
 						style={{ x: x2, rotate: rotateRight }}
-						src={me}
-						alt='photo'
-						className='absolute z-10 top-60  md:top-20 right-4/5 md:right-1/2 translate-x-1/2  md:h-200 h-80 rounded-2xl'
-					/>
+						className='absolute z-10 top-60  md:top-20 right-2/3 sm:right-1/2 md:right-1/2 translate-x-1/2  lg:h-200 sm:h-120 md:h-170 h-80 rounded-2xl'
+					>
+						<LazyLoadImage src={me} alt='photo' />
+					</motion.div>
 
 					<motion.div
 						style={{ opacity: textOpacity }}
-						className='text-center flex flex-col gap-6 z-0 md:text-3xl font-bold mb-20 mt-10 relative px-2 md:px-0'
+						className='text-center flex flex-col gap-6 z-0 md:text-2xl lg:text-3xl font-bold mb-20 mt-10 sm:mt-60 md:mt-40 2xl:mt-90  relative px-2 md:px-0'
 					>
-						<motion.img
+						<motion.div
 							style={{ x: xLeft }}
-							src={stack}
-							alt='Decoration'
-							className='absolute left-0 md:-left-10 -bottom-30 md:top-70 w-25 md:w-70 -z-10 -rotate-5'
-						/>
-						<motion.img
+							className='absolute left-0 md:-left-10 -bottom-30 md:top-70 w-25 md:w-40 xl:w-70 -z-10 -rotate-5'
+						>
+							<LazyLoadImage src={stack} alt='Decoration' />
+						</motion.div>
+						<motion.div
 							style={{ x: xRight }}
-							src={coffee}
-							alt='Decoration'
-							className='absolute -right-2 md:-right-10 -bottom-35 md:top-70 w-25 md:w-60 -z-10 rotate-5'
-						/>
+							className='absolute -right-2 md:-right-10 -bottom-35 md:top-70 w-25 md:w-40 xl:w-60 -z-10 rotate-5'
+						>
+							<LazyLoadImage src={coffee} alt='Decoration' />
+						</motion.div>
+
 						<p>
 							Hi! I'm Denis, a frontend developer passionate about building
 							clean, user-friendly, and responsive web interfaces.
@@ -164,8 +166,7 @@ const About = () => {
 
 					<div className='relative'>
 						<Button to='/contact'>CONTACT ME</Button>
-						<motion.img
-							style={{ y: yDown }}
+						<motion.div
 							animate={{
 								x: [-10, 10],
 								rotate: [2, -2],
@@ -184,24 +185,25 @@ const About = () => {
 									ease: 'easeInOut',
 								},
 							}}
-							src={swing}
-							alt='Decoration'
-							className='absolute right-[43%] md:right-[48%] translate-x-1/2 top-11  md:top-17 md:w-50 w-25'
-						/>
+							className='absolute right-[43%] md:right-[48%] translate-x-1/2 top-11 md:top-14  lg:top-17 md:w-40 xl:w-50 w-25'
+							style={{ y: yDown }}
+						>
+							<LazyLoadImage src={swing} alt='Decoration' />
+						</motion.div>
 					</div>
 				</div>
 				<div ref={refY} className='container pb-20'>
 					<motion.h4
 						style={{ y }}
-						className='text-5xl px-2 md:px-0 md:text-8xl mt-50 mb-15 md:mb-30 text-center font-extrabold  tracking-tighter'
+						className='text-5xl px-2 md:px-0 md:text-6xl lg:text-8xl mt-50 mb-15 md:mb-30 text-center font-extrabold  tracking-tighter'
 					>
 						Under the Hood
 					</motion.h4>
 					<div className='mb-15 md:mb-30'>
-						<div className='text-2xl md:text-4xl mb-10 font-bold'>
+						<div className='text-2xl md:text-3xl lg:text-4xl mb-10 font-bold'>
 							TECHNICAL SKILLS:
 						</div>
-						<div className='grid grid-cols-2 gap-2 md:grid-cols-5 md:gap-5 px-4 md:px-0'>
+						<div className='grid grid-cols-2 gap-2 xl:grid-cols-5 md:grid-cols-3 md:gap-5 px-4 xl:px-0'>
 							{techList.map((tech, i) => (
 								<TechBox
 									key={tech.title}
@@ -212,17 +214,17 @@ const About = () => {
 							))}
 						</div>
 
-						<div className='text-2xl md:text-4xl mt-20 md:mt-30 mb-10 font-bold relative px-4 md:px-0'>
+						<div className='text-2xl md:text-3xl lg:text-4xl mt-20 md:mt-30 mb-10 font-bold relative px-4 xl:px-0'>
 							SOFT SKILLS:
-							<motion.img
+							<motion.div
 								style={{ x: xRightSkills }}
-								src={skills}
-								alt='Decoration'
-								className='absolute right-2 md:right-0 md:-top-10 -top-18 w-30  md:w-75'
-							/>
+								className='absolute right-2 md:right-10 lg:right-0 lg:-top-10 -top-18 w-30 md:w-35  xl:w-75'
+							>
+								<LazyLoadImage src={skills} alt='Decoration' />
+							</motion.div>
 						</div>
 
-						<div className='md:text-3xl font-medium flex flex-col gap-2  px-4 md:px-0'>
+						<div className='lg:text-3xl md:text-2xl font-medium flex flex-col gap-2  px-4 xl:px-0'>
 							<div>
 								👨‍💻{' '}
 								<span className='font-extrabold'>
@@ -251,12 +253,12 @@ const About = () => {
 						</div>
 					</div>
 					<div ref={ref} className='relative'>
-						<motion.img
+						<motion.div
 							style={{ x: xLeftBooks }}
-							src={books}
-							alt='Decoration'
-							className='absolute left-3 md:left-0 md:-top-15 bottom-22 w-15  md:w-55'
-						/>
+							className='absolute left-3 md:left-0 md:-top-15 bottom-22 w-15 md:w-40  lg:w-55'
+						>
+							<LazyLoadImage src={books} alt='Decoration' />
+						</motion.div>
 						<Button to='/'>
 							<div className='flex items-center gap-3'>
 								DOWNLOAD CV{' '}

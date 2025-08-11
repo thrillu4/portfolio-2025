@@ -1,5 +1,6 @@
 import Lenis from 'lenis'
 import { useEffect } from 'react'
+import { ToastContainer } from 'react-toastify'
 import Footer from './components/Footer'
 import NavBar from './components/NavBar'
 import ScrollToTop from './components/ScrollToTop'
@@ -22,6 +23,7 @@ function App() {
 			<NavBar />
 			<ProjectRoutes />
 			<Footer />
+			<ToastContainer />
 		</>
 	)
 }

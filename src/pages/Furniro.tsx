@@ -20,12 +20,12 @@ const Furniro = () => {
 	return (
 		<div className='overflow-x-hidden' style={{ backgroundColor: color }}>
 			<div className='relative z-30 ' ref={container}>
-				<div className='pt-30 md:pb-100 pb-180'>
+				<div className='pt-30 md:pb-100 lg:pb-50 pb-180'>
 					<motion.h3
 						initial={{ y: '60px', opacity: 0 }}
 						animate={{ y: '0px', opacity: 1 }}
 						transition={{ duration: 1, delay: 1, ease: 'easeIn' }}
-						className='text-2xl md:text-5xl text-center font-medium'
+						className='text-2xl md:text-3xl lg:text-5xl text-center font-medium'
 					>
 						{type} - 2023
 					</motion.h3>
@@ -33,14 +33,15 @@ const Furniro = () => {
 						initial={{ y: '60px', opacity: 0 }}
 						animate={{ y: '0px', opacity: 1 }}
 						transition={{ duration: 1, delay: 1, ease: 'easeIn' }}
-						className='text-7xl md:text-[300px] font-[Anton] tracking-tight text-center md:leading-75'
+						className='text-7xl md:text-[200px] lg:text-[250px] xl:text-[300px] font-[Anton] tracking-tight text-center xl:leading-75'
 					>
 						FURNIRO BEAUTIFUL ROOMS INSPIRATION
 					</motion.h1>
 				</div>
 				<div>
-					<div className=' relative md:w-200 w-screen  mx-auto'>
+					<div className=' relative lg:w-190 xl:w-200 w-screen  mx-auto'>
 						<motion.img
+							loading='lazy'
 							style={{ y, scale, rotate }}
 							src={bg}
 							alt={title}
@@ -48,14 +49,14 @@ const Furniro = () => {
 						/>
 						<motion.div
 							style={{ opacity }}
-							className='absolute right-1/2 font-bold tracking-tighter bottom-40 md:text-5xl md:w-150'
+							className='absolute right-1/2 font-bold tracking-tighter bottom-40 text-3xl lg:text-5xl xl:w-150'
 						>
 							Browse The Range Where exquisite furnishings await your discerning
 							eye
 						</motion.div>
 						<motion.div
 							style={{ opacity }}
-							className='absolute left-1/2 font-bold tracking-tighter -bottom-10 md:text-5xl md:w-150'
+							className='absolute left-1/2 font-bold tracking-tighter -bottom-10 text-3xl lg:text-5xl xl:w-150'
 						>
 							Unveil a realm of captivating creations, where every piece tells a
 							story of grace and allure.

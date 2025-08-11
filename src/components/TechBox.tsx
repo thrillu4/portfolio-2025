@@ -26,9 +26,9 @@ const TechBox = ({ src, title, index }: Props) => {
 				delay: index * 0.3,
 				ease: 'easeIn',
 			}}
-			className='border-2 hover:scale-105 transition duration-200 flex items-center text-sm md:text-4xl md:p-5 p-2 rounded-2xl gap-3 md:gap-5 justify-center '
+			className='border-2 hover:scale-105 transition duration-200 flex items-center text-sm md:text-2xl lg:text-4xl md:p-5 p-2 rounded-2xl gap-3 md:gap-5 justify-center '
 		>
-			<img src={src} alt={title} className='md:w-10 w-4' />
+			<img src={src} alt={title} className='lg:w-10 md:w-7 w-4' />
 			<div>{title}</div>
 		</motion.div>
 	)
