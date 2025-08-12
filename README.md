@@ -1,69 +1,92 @@
-# React + TypeScript + Vite
+# 🚀 My Personal Portfolio – 2025
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my **personal portfolio website**, crafted to showcase my projects, skills, and passion for frontend development.  
+It's built with a modern tech stack, fully responsive, smoothly animated, and optimized for a great user experience on any device.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [denys-kraiovyi.vercel.app](https://denys-kraiovyi.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Portfolio Screenshot](./thumbnail.jpg)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Modern UI/UX** – clean, minimalistic, and elegant design
+- **Smooth Animations** – powered by Framer Motion & Lenis for fluid scrolling
+- **Fully Responsive** – adapts perfectly to mobile, tablet, and desktop
+- **Interactive Contact Form** – connected via EmailJS with validation using React Hook Form + Zod
+- **Dynamic Tech Cards** – hover effects with details about my skills
+- **Lazy Loading Images** – performance-optimized media with `react-lazy-load-image-component`
+- **Toast Notifications** – interactive feedback with `react-toastify`
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠 Tech Stack
+
+**Frontend:**
+
+- [React 19](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS 4](https://tailwindcss.com/)
+- [React Router 7](https://reactrouter.com/)
+
+**Animations & Effects:**
+
+- [Framer Motion](https://www.framer.com/motion/) (via `motion`)
+- [Lenis Smooth Scroll](https://lenis.studiofreight.com/)
+- [tsparticles](https://particles.js.org/) for background effects
+
+**Forms & Validation:**
+
+- [React Hook Form](https://react-hook-form.com/)
+- [Zod](https://zod.dev/)
+- [EmailJS](https://www.emailjs.com/)
+
+**UI Enhancements:**
+
+- [Lucide Icons](https://lucide.dev/)
+- [React Lazy Load Image Component](https://www.npmjs.com/package/react-lazy-load-image-component)
+- [React Toastify](https://fkhadra.github.io/react-toastify/)
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the repo
+
+```bash
+  git clone https://github.com/thrillu4/portfolio-2025.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2️⃣ Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+  npm install
 ```
+
+### 3️⃣ Run locally
+
+```bash
+  npm run dev
+```
+
+### ⚒️ Build for production
+
+```bash
+  npm run build
+```
+
+### 📽️ Run production version
+
+```bash
+  npm run preview
+```
+
+---
+
+## 📬 Contact Me
+
+💌 [Email](mailto:kraya.work@gmail.com)
+💼 [LinkedIn](https://www.linkedin.com/in/denis-kraevoy/)
+🖊️ [Telegram](https://t.me/real_thrill)
+💻 [GitHub](https://github.com/thrillu4)
