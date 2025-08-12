@@ -71,8 +71,21 @@ const NotFound = () => {
 				<LazyLoadImage src={ghosty} alt='ghosty' />
 			</motion.div>
 			<div className='lg:w-170 w-full md:w-120 mx-auto text-center font-extrabold lg:text-6xl text-4xl'>
-				<LazyLoadImage src={notFound} alt='not found!' />
-				<motion.div className='mb-10'>Oops! Page not found!</motion.div>
+				<motion.div
+					initial={{ opacity: 0, y: '120px' }}
+					animate={{ opacity: 1, y: '0px' }}
+					transition={{ duration: 0.8, ease: 'easeIn' }}
+				>
+					<LazyLoadImage src={notFound} alt='not found!' />
+				</motion.div>
+				<motion.div
+					initial={{ opacity: 0, y: '120px' }}
+					animate={{ opacity: 1, y: '0px' }}
+					transition={{ duration: 1, ease: 'easeIn' }}
+					className='mb-10'
+				>
+					Oops! Page not found!
+				</motion.div>
 				<Link
 					className='mb-20 relative text-xl md:text-3xl inline-flex items-center gap-3 border-2 font-bold border-white rounded-4xl py-3 px-6 hover:text-black hover:bg-white transition duration-100'
 					to='/'

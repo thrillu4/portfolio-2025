@@ -93,7 +93,7 @@ const About = () => {
 	]
 
 	return (
-		<div className=' bg-white overflow-x-hidden xl:overflow-visible'>
+		<div className=' bg-white overflow-x-hidden'>
 			<motion.div
 				style={{ borderBottomLeftRadius, borderBottomRightRadius }}
 				className='bg-black'
@@ -117,20 +117,28 @@ const About = () => {
 
 					<motion.div
 						style={{ x: x1, rotate: rotateLeft }}
-						className='absolute z-30 top-50  md:top-0 left-1/2 sm:left-1/3 md:left-1/2 md:-translate-x-1/2  lg:h-200 sm:h-120 md:h-170 h-80 rounded-2xl'
+						className='absolute z-30 top-20 xl:top-0 left-20 md:left-40 xl:left-1/2 xl:-translate-x-1/2  w-90 sm:w-120 md:w-130 xl:w-150 2xl:w-170 rounded-2xl'
 					>
-						<LazyLoadImage src={wheel} alt='photo' />
+						<LazyLoadImage
+							src={wheel}
+							alt='photo'
+							className='h-full w-full object-cover'
+						/>
 					</motion.div>
 					<motion.div
 						style={{ x: x2, rotate: rotateRight }}
-						className='absolute z-10 top-60  md:top-20 right-2/3 sm:right-1/2 md:right-1/2 translate-x-1/2  lg:h-200 sm:h-120 md:h-170 h-80 rounded-2xl'
+						className='absolute z-10 top-30 xl:top-10 right-30 md:right-50 xl:right-1/2 xl:translate-x-1/2  w-90 sm:w-120 md:w-130 xl:w-150 2xl:w-170  rounded-2xl'
 					>
-						<LazyLoadImage src={me} alt='photo' />
+						<LazyLoadImage
+							src={me}
+							alt='photo'
+							className='h-full w-full object-cover'
+						/>
 					</motion.div>
 
 					<motion.div
 						style={{ opacity: textOpacity }}
-						className='text-center flex flex-col gap-6 z-0 md:text-2xl lg:text-3xl font-bold mb-20 mt-10 sm:mt-60 md:mt-40 2xl:mt-90  relative px-2 md:px-0'
+						className='text-center flex flex-col gap-6 z-0 md:text-2xl lg:text-3xl font-bold mb-20 mt-30   relative px-2 md:px-0'
 					>
 						<motion.div
 							style={{ x: xLeft }}

@@ -2,6 +2,7 @@ import { motion, MotionValue, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
 import type { IProjects } from '../types'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { Link } from 'react-router'
 
 interface Props extends IProjects {
 	i: number
@@ -18,6 +19,7 @@ const Card = ({
 	type,
 	title,
 	screenshots,
+	route,
 	color,
 }: Props) => {
 	const container = useRef(null)
@@ -53,9 +55,11 @@ const Card = ({
 							<h1 className='font-bold text-[12px] md:text-3xl'>{title}</h1>
 						</div>
 					</div>
-					<button className='text-[10px] md:text-2xl lg:text-3xl border-2 border-white py-1 px-2 md:px-10 lg:px-20 md:py-5  rounded-full cursor-pointer hover:bg-white hover:border-black hover:text-black font-bold transition-all duration-300'>
-						SEE MORE
-					</button>
+					<Link to={`projects/${route}`}>
+						<button className='text-[10px] md:text-2xl lg:text-3xl border-2 border-white py-1 px-2 md:px-10 lg:px-20 md:py-5  rounded-full cursor-pointer hover:bg-white hover:border-black hover:text-black font-bold transition-all duration-300'>
+							SEE MORE
+						</button>
+					</Link>
 				</div>
 				<div className='grid lg:grid-cols-6 lg:grid-rows-2 gap-4 mt-10'>
 					<div className='xl:h-[500px] overflow-hidden md:col-span-4 md:row-span-2 '>

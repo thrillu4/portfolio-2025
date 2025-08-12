@@ -116,7 +116,7 @@ const Home = () => {
 						PROJECTS
 					</motion.h2>
 				</div>
-				<div ref={container} className='md:mt-20'>
+				<div ref={container} className='mt-20'>
 					{projects.map((project, index) => {
 						const targetScale = 1 - (projects.length - index) * 0.05
 						return (

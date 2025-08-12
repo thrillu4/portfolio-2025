@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'motion/react'
-import { useRef } from 'react'
+import React, { useRef } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import cap from '../images/mess/cap.png'
 import cup from '../images/mess/cup.png'
@@ -34,17 +34,21 @@ const AboutSection = () => {
 
 				<motion.div style={{ x: xLeft }}>
 					<LazyLoadImage
+						width={100}
+						height={100}
+						threshold={200}
 						src={nose}
 						alt='Right Decoration'
-						effect='opacity'
 						className='absolute -left-5 xl:-left-10 w-20 md:w-30 xl:w-50 -rotate-8'
 					/>
 				</motion.div>
 
 				<motion.div style={{ x: xRight }}>
 					<LazyLoadImage
+						width={100}
+						height={100}
+						threshold={200}
 						src={cap}
-						effect='opacity'
 						alt='Right Decoration'
 						className='absolute -right-5 xl:-right-10 w-20 md:w-30  xl:w-50 rotate-6'
 					/>
@@ -66,16 +70,20 @@ const AboutSection = () => {
 				</motion.p>
 				<motion.div style={{ x: xRight }}>
 					<LazyLoadImage
+						width={100}
+						height={100}
+						threshold={200}
 						src={cup}
-						effect='opacity'
 						alt='Right Decoration'
 						className='absolute xl:left-20 w-20 md:w-30  xl:w-50 rotate-6'
 					/>
 				</motion.div>
 				<motion.div style={{ x: xLeft }}>
 					<LazyLoadImage
+						width={100}
+						height={100}
+						threshold={200}
 						src={smile}
-						effect='opacity'
 						alt='Right Decoration'
 						className='absolute right-0 xl:right-10 w-20 md:w-30  xl:w-50 rotate-12'
 					/>
@@ -84,30 +92,16 @@ const AboutSection = () => {
 					<Button to='/about'>EXPLORE MORE</Button>
 					<motion.div
 						style={{ y }}
-						animate={{
-							x: [-10, -10],
-							rotate: [3, -3],
-						}}
+						animate={{ rotate: [3, -3] }}
 						transition={{
-							x: {
-								duration: 1,
-								repeat: Infinity,
-								repeatType: 'reverse',
-								ease: 'easeInOut',
-							},
-							rotate: {
-								duration: 1,
-								repeat: Infinity,
-								repeatType: 'reverse',
-								ease: 'easeInOut',
-							},
+							rotate: { duration: 1, repeat: Infinity, repeatType: 'reverse' },
 						}}
 						className='absolute left-1/2 -translate-x-1/2 xl:top-16  w-20 md:w-22  xl:w-50 -z-30'
 					>
 						<LazyLoadImage
 							src={flying}
-							effect='opacity'
 							alt='Right Decoration'
+							threshold={200}
 						/>
 					</motion.div>
 				</div>
@@ -116,4 +110,4 @@ const AboutSection = () => {
 	)
 }
 
-export default AboutSection
+export default React.memo(AboutSection)

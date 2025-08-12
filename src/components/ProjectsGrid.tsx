@@ -20,14 +20,14 @@ const ProjectsGrid = () => {
 		<div
 			ref={container}
 			className={`grid xl:grid-cols-2 gap-y-10 xl:gap-y-30 gap-x-10 lg:w-11/12 xl:w-full lg:mx-auto relative items-stretch ${
-				hovered === null ? 'cursor-default' : 'md:cursor-none'
+				hovered === null ? 'cursor-default' : 'lg:cursor-none'
 			}`}
 		>
 			<CustomCursor visible={hovered} />
 			{projects.map((project, i) => (
 				<Link
 					key={i}
-					className='md:cursor-none'
+					className='lg:cursor-none'
 					to={`/projects/${project.route}`}
 				>
 					<motion.div
@@ -37,7 +37,7 @@ const ProjectsGrid = () => {
 							backgroundColor: hovered === i ? project.color : 'transparent',
 							opacity,
 						}}
-						className={`border-4 border-white p-10 text-center h-full w-full`}
+						className={`border-4 border-white p-10 text-center h-full w-full flex flex-col justify-between`}
 					>
 						<div className='font-medium md:text-3xl lg:text-4xl'>
 							{project.type}
@@ -48,7 +48,7 @@ const ProjectsGrid = () => {
 						<div className='mt-4 text-center w-full  md:h-200 '>
 							<LazyLoadImage
 								src={project.src}
-								className='h-full object-cover mx-auto'
+								className='h-full object-contain mx-auto'
 								alt={project.title}
 							/>
 						</div>

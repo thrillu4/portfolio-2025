@@ -160,7 +160,7 @@ const Projects = () => {
 					</motion.h3>
 				</div>
 
-				<div className=' lg:mt-30 px-2 md:px-5'>
+				<div className='mt-15 lg:mt-30 px-2 md:px-5'>
 					<ProjectsGrid />
 				</div>
 				<div ref={container}>

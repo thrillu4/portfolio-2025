@@ -35,8 +35,9 @@ const Certification = () => {
 					CERTIFICATIONS
 				</motion.h4>
 				<div className=' xl:container mx-auto px-2  xl:px-0 grid grid-cols-1 lg:grid-cols-2 gap-10'>
-					{certifications.map((cert) => (
+					{certifications.map((cert, i) => (
 						<motion.div
+							key={i}
 							style={{ scale }}
 							className=' xl:w-160 w-full md:hover:scale-105 transition duration-200 mx-auto border-2 border-black rounded-4xl'
 						>

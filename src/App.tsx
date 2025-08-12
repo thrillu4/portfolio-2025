@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 import { ToastContainer } from 'react-toastify'
 import Footer from './components/Footer'
 import NavBar from './components/NavBar'
-import ScrollToTop from './components/ScrollToTop'
 import ProjectRoutes from './routes/Routes'
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
 	//
 	return (
 		<>
-			<ScrollToTop />
 			<NavBar />
 			<ProjectRoutes />
 			<Footer />
