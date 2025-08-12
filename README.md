@@ -5,7 +5,7 @@ It's built with a modern tech stack, fully responsive, smoothly animated, and op
 
 🔗 **Live Demo:** [denys-kraiovyi.vercel.app](https://denys-kraiovyi.vercel.app/)
 
-![Portfolio Screenshot](./thumbnail.jpg)
+![Portfolio Screenshot](/public/thumbnail.jpg)
 
 ---
 
