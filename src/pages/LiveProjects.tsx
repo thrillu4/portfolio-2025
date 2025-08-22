@@ -94,7 +94,9 @@ const LiveProjects = () => {
 		[]
 	)
 
-	const { color, type, link, gitHub } = projects[3]
+	const { color, type, link, gitHub } = projects.filter(
+		(proj) => proj.title === 'LIVE PROJECTS'
+	)[0]
 	const container = useRef(null)
 
 	const { scrollYProgress } = useScroll({

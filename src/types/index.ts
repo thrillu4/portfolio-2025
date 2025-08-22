@@ -7,7 +7,6 @@ export interface ITechStack {
 
 export interface IProjects {
 	title: string
-	description: string
 	src: string
 	link: string
 	type: string

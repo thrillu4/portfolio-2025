@@ -6,7 +6,9 @@ import GetInTouch from '../components/GetInTouch'
 import { projects } from '../data/projects'
 
 const TaskManager = () => {
-	const { title, color, type, bg, link, gitHub } = projects[1]
+	const { title, color, type, bg, link, gitHub } = projects.filter(
+		(proj) => proj.title === 'TASK MASTER'
+	)[0]
 	const container = useRef(null)
 
 	const { scrollYProgress } = useScroll({

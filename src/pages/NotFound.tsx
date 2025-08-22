@@ -1,11 +1,11 @@
 import { House } from 'lucide-react'
 import { motion } from 'motion/react'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Link } from 'react-router'
 import notFound from '../images/404/404.png'
 import clown from '../images/404/clown.png'
 import ghost from '../images/404/ghost.png'
 import ghosty from '../images/404/ghosty.png'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const NotFound = () => {
 	return (
@@ -75,8 +75,9 @@ const NotFound = () => {
 					initial={{ opacity: 0, y: '120px' }}
 					animate={{ opacity: 1, y: '0px' }}
 					transition={{ duration: 0.8, ease: 'easeIn' }}
+					className=''
 				>
-					<LazyLoadImage src={notFound} alt='not found!' />
+					<LazyLoadImage src={notFound} alt='not found!' className='mx-auto' />
 				</motion.div>
 				<motion.div
 					initial={{ opacity: 0, y: '120px' }}

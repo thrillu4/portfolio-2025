@@ -5,9 +5,9 @@ import { Link } from 'react-router'
 import GetInTouch from '../components/GetInTouch'
 import { projects } from '../data/projects'
 
-const GodOfWar = () => {
+const Chatty = () => {
 	const { title, color, type, bg, link, gitHub } = projects.filter(
-		(proj) => proj.title === 'GOD OF WAR: RAGNARÖK'
+		(proj) => proj.title === 'CHATTY'
 	)[0]
 	const container = useRef(null)
 
@@ -15,33 +15,39 @@ const GodOfWar = () => {
 		target: container,
 	})
 
-	const y = useTransform(scrollYProgress, [0, 0.4], ['-700px', '0px'])
-	const scale = useTransform(scrollYProgress, [0, 0.5], [3.5, 1])
+	const y = useTransform(scrollYProgress, [0, 0.5], ['-770px', '0px'])
+	const scale = useTransform(scrollYProgress, [0, 0.5], [4, 1])
 	const rotate = useTransform(scrollYProgress, [0, 0.5], ['0deg', '-5deg'])
-	const opacity = useTransform(scrollYProgress, [0, 0.8], [0, 1])
+	const opacity = useTransform(scrollYProgress, [0, 0.6], [0, 1])
 	return (
 		<div className='overflow-x-hidden' style={{ backgroundColor: color }}>
 			<div className='relative z-30 ' ref={container}>
-				<div className='pt-40 md:pb-70 pb-145 '>
+				<div className='pt-30 md:pb-100 lg:pb-50 pb-180'>
 					<motion.h3
 						initial={{ y: '60px', opacity: 0 }}
 						animate={{ y: '0px', opacity: 1 }}
 						transition={{ duration: 1, delay: 1, ease: 'easeIn' }}
 						className='text-2xl md:text-3xl lg:text-5xl text-center font-medium'
 					>
-						{type} - 2023
+						{type} - 2025
 					</motion.h3>
 					<motion.h1
 						initial={{ y: '60px', opacity: 0 }}
 						animate={{ y: '0px', opacity: 1 }}
 						transition={{ duration: 1, delay: 1, ease: 'easeIn' }}
-						className='text-7xl md:text-[200px] lg:text-[250px] 2xl:text-[300px] font-[Anton] tracking-tight text-center lg:leading-75'
+						className='text-7xl md:text-[200px] lg:text-[250px] xl:text-[300px] font-[Anton] tracking-tight text-center xl:leading-75'
 					>
-						GOD OF WAR <br /> Ragnarök
+						MODERN CHATTY WEB APP
 					</motion.h1>
 				</div>
 				<div>
-					<div className=' relative lg:w-200 w-screen mx-auto'>
+					<div
+						style={{
+							WebkitTextStroke: '1px #000',
+							color: '#fff',
+						}}
+						className=' relative lg:w-190 xl:w-200 w-screen  mx-auto'
+					>
 						<motion.img
 							loading='lazy'
 							style={{ y, scale, rotate }}
@@ -51,29 +57,31 @@ const GodOfWar = () => {
 						/>
 						<motion.div
 							style={{ opacity }}
-							className='absolute right-1/2 font-bold tracking-tighter bottom-40 lg:text-5xl md:text-3xl xl:w-150'
+							className='absolute right-1/2 font-bold tracking-tighter bottom-40  lg:text-5xl xl:w-150'
 						>
-							STUNNING VISUALS AND IMPRESSIVE SCALE
+							Chatty lets you connect with others through instant real-time
+							messaging.
 						</motion.div>
 						<motion.div
 							style={{ opacity }}
-							className='absolute left-1/2 font-bold tracking-tighter -bottom-10 lg:text-5xl md:text-3xl xl:w-150'
+							className='absolute left-1/2 font-bold tracking-tighter -bottom-10  lg:text-5xl xl:w-150'
 						>
-							BEAUTIFUL MOVING GAME LAYOUT
+							Choose from over 35 DaisyUI themes to match your style. You can
+							chat comfortably on both desktop and mobile.
 						</motion.div>
 					</div>
-					<div className='md:text-2xl font-bold justify-center flex items-center gap-10 mt-30'>
+					<div className='md:text-2xl font-bold justify-center flex items-center md:gap-10 gap-3 mt-30'>
 						<a
 							href={link}
 							target='_blank'
-							className={`md:border-4 border-2 border-white p-2  md:p-5 rounded-4xl flex items-center gap-2 cursor-pointer transition duration-200 hover:text-slate-800 hover:bg-white`}
+							className={`md:border-4 border-2 border-white p-2  md:p-5 rounded-4xl flex items-center gap-2 cursor-pointer transition duration-200 hover:text-blue-950 hover:bg-white`}
 						>
 							LIVE DEMO <CircleArrowRight className='md:w-[35px] w-5' />
 						</a>
 						<a
 							href={gitHub}
 							target='_blank'
-							className={`md:border-4 border-2 border-white p-2  md:p-5 rounded-4xl flex items-center gap-2 cursor-pointer transition duration-200 hover:text-slate-800 hover:bg-white`}
+							className={`md:border-4 border-2 border-white p-2  md:p-5 rounded-4xl flex items-center gap-2 cursor-pointer transition duration-200 hover:text-blue-950 hover:bg-white`}
 						>
 							REPOSITORY <Github className='md:w-[35px] w-5' />
 						</a>
@@ -94,10 +102,10 @@ const GodOfWar = () => {
 						BACK TO PROJECTS <Undo2 className='w-4 md:w-auto' />
 					</Link>
 				</div>
-				<GetInTouch bg={color} color='#ffffff' />
+				<GetInTouch bg={color} color='#fff' />
 			</div>
 		</div>
 	)
 }
 
-export default GodOfWar
+export default Chatty

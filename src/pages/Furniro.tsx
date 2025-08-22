@@ -6,7 +6,9 @@ import { projects } from '../data/projects'
 import { Link } from 'react-router'
 
 const Furniro = () => {
-	const { title, color, type, bg, link, gitHub } = projects[0]
+	const { title, color, type, bg, link, gitHub } = projects.filter(
+		(proj) => proj.title === 'FURNIRO WEB SITE'
+	)[0]
 	const container = useRef(null)
 
 	const { scrollYProgress } = useScroll({
@@ -49,14 +51,14 @@ const Furniro = () => {
 						/>
 						<motion.div
 							style={{ opacity }}
-							className='absolute right-1/2 font-bold tracking-tighter bottom-40 text-3xl lg:text-5xl xl:w-150'
+							className='absolute right-1/2 font-bold tracking-tighter bottom-40  lg:text-5xl xl:w-150'
 						>
 							Browse The Range Where exquisite furnishings await your discerning
 							eye
 						</motion.div>
 						<motion.div
 							style={{ opacity }}
-							className='absolute left-1/2 font-bold tracking-tighter -bottom-10 text-3xl lg:text-5xl xl:w-150'
+							className='absolute left-1/2 font-bold tracking-tighter -bottom-10  lg:text-5xl xl:w-150'
 						>
 							Unveil a realm of captivating creations, where every piece tells a
 							story of grace and allure.
