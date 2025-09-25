@@ -3,6 +3,37 @@ import type { IProjects } from '../types'
 export const projects: IProjects[] = [
 	{
 		type: 'E-COMMERCE',
+		title: 'Noiré Pearl Shop',
+		link: 'https://noire-pearl.vercel.app/',
+		src: './previews/noire.png',
+		techStack: [
+			'NEXT JS',
+			'TYPESCRIPT',
+			'PRISMA',
+			'TAILWIND',
+			'ZUSTAND',
+			'SHADCN',
+		],
+		gitHub: 'https://github.com/thrillu4/noire-shop',
+		logos: [
+			'./tech/nextjs.png',
+			'./tech/ts.png',
+			'./tech/prisma.png',
+			'./tech/tailwind.png',
+			'./tech/zustand.png',
+			'./tech/shadcn.png',
+		],
+		color: '#10242B',
+		screenshots: [
+			'./screenshots/noire.jpg',
+			'./screenshots/noire2.png',
+			'./screenshots/noire3.png',
+		],
+		bg: '../bg/noire.jpg',
+		route: 'noire',
+	},
+	{
+		type: 'E-COMMERCE',
 		title: 'FURNIRO WEB SITE',
 		link: 'https://web-furniro.netlify.app/',
 		src: './previews/furn.png',

@@ -1,6 +1,7 @@
 import { lazy } from 'react'
 import { Route, Routes } from 'react-router'
 import Chatty from '../pages/Chatty'
+import Noire from '../pages/Noire'
 const About = lazy(() => import('../pages/About'))
 const Contact = lazy(() => import('../pages/Contact'))
 const Furniro = lazy(() => import('../pages/Furniro'))
@@ -23,6 +24,7 @@ const ProjectRoutes = () => {
 			<Route path='/projects/task-manager' element={<TaskManager />} />
 			<Route path='/projects/godofwar' element={<GodOfWar />} />
 			<Route path='/projects/live-projects' element={<LiveProjects />} />
+			<Route path='/projects/noire' element={<Noire />} />
 			<Route path='/contact' element={<Contact />} />
 		</Routes>
 	)
