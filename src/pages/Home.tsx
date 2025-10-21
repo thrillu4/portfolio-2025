@@ -107,7 +107,7 @@ const Home = () => {
 
 			<AboutSection />
 
-			<section className='projects container'>
+			<section className='projects container '>
 				<div className='mt-40'>
 					<motion.h2
 						style={{ opacity: projectsOpacity }}
@@ -126,7 +126,7 @@ const Home = () => {
 								{...project}
 								targetScale={targetScale}
 								progress={scrollYProgress}
-								range={[index * 0.25, 1]}
+								range={[(index / projects.length) * 0.8, 1]}
 							/>
 						)
 					})}

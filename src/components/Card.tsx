@@ -1,8 +1,8 @@
 import { motion, MotionValue, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
-import type { IProjects } from '../types'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Link } from 'react-router'
+import type { IProjects } from '../types'
 
 interface Props extends IProjects {
 	i: number
@@ -67,7 +67,7 @@ const Card = ({
 							<LazyLoadImage
 								src={screenshots[0]}
 								alt='project preview'
-								className='w-full h-full rounded-2xl cover md:rounded-4xl'
+								className='w-full h-full rounded-2xl object-cover md:rounded-4xl'
 							/>
 						</motion.div>
 					</div>

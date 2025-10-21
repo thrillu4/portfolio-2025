@@ -2,6 +2,29 @@ import type { IProjects } from '../types'
 
 export const projects: IProjects[] = [
 	{
+		type: 'SaaS (PFM)',
+		title: 'Finance Tracker Dashboard',
+		link: 'https://fin-track-silk.vercel.app/',
+		src: './previews/dashboard.png',
+		techStack: ['NEXT JS', 'TYPESCRIPT', 'PRISMA', 'TAILWIND', 'SHADCN'],
+		gitHub: 'https://github.com/thrillu4/fin-track',
+		logos: [
+			'./tech/nextjs.png',
+			'./tech/ts.png',
+			'./tech/prisma.png',
+			'./tech/tailwind.png',
+			'./tech/shadcn.png',
+		],
+		color: '#615fff',
+		screenshots: [
+			'./screenshots/dashboard.png',
+			'./screenshots/dashboard2.png',
+			'./screenshots/dashboard3.png',
+		],
+		bg: '../bg/dashboard.png',
+		route: 'dashboard',
+	},
+	{
 		type: 'E-COMMERCE',
 		title: 'Noiré Pearl Shop',
 		link: 'https://noire-pearl.vercel.app/',

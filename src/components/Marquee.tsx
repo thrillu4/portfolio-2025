@@ -46,7 +46,7 @@ const Marquee = () => {
 				style={{ borderBottomLeftRadius, borderBottomRightRadius }}
 				className='bg-black'
 			>
-				<div className='overflow-hidden text-8xl md:text-9xl lg:text-[270px] font-["Anton"] tracking-tight font-bold py-50'>
+				<div className='overflow-hidden  text-8xl md:text-9xl lg:text-[270px] font-["Anton"] tracking-tight font-bold py-60'>
 					<motion.div
 						className='whitespace-nowrap flex gap-10'
 						animate={{ x: animateX }}
