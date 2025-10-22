@@ -1,10 +1,10 @@
 import { motion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import github from '../images/links/github.png'
 import instagram from '../images/links/instagram.png'
 import linkedin from '../images/links/linkedin.png'
 import telegram from '../images/links/telegram.png'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const Footer = () => {
 	const container = useRef(null)
@@ -23,21 +23,25 @@ const Footer = () => {
 			label: 'TELEGRAM',
 			img: telegram,
 			alt: 'telegram logo',
+			href: 'https://t.me/real_thrill',
 		},
 		{
 			label: 'LINKEDIN',
 			img: linkedin,
 			alt: 'linked in logo',
+			href: 'https://www.linkedin.com/in/denis-kraevoy',
 		},
 		{
 			label: 'GITHUB',
 			img: github,
 			alt: 'git hub logo',
+			href: 'https://github.com/thrillu4',
 		},
 		{
 			label: 'INSTAGRAM',
 			img: instagram,
 			alt: 'instagram logo',
+			href: 'https://www.instagram.com/thrillinst/',
 		},
 	]
 
@@ -63,7 +67,7 @@ const Footer = () => {
 								{links.map((link) => (
 									<li key={link.label}>
 										<a
-											href='https://t.me/real_thrill'
+											href={link.href}
 											target='_blank'
 											className='flex items-center text-xs md:text-base gap-1 hover:underline transition duration-300'
 										>

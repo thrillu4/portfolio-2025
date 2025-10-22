@@ -267,12 +267,16 @@ const About = () => {
 						>
 							<LazyLoadImage src={books} alt='Decoration' />
 						</motion.div>
-						<Button to='/'>
-							<div className='flex items-center gap-3'>
+						<div className='flex justify-center'>
+							<a
+								href='/cv.pdf'
+								download='Denys Kraiovyi Frontend Developer CV.pdf'
+								className='text-sm lg:text-2xl flex items-center gap-3 font-semibold border-2 border-violet-950 hover:border-white  hover:-rotate-6  duration-300 transition cursor-pointer   rounded-4xl py-3 px-5 md:px-10 md:py-5 lg:px-15 bg-gradient-to-br from-black  via-purple-700 to-orange-500 hover:to-black hover:via-pink-500  hover:from-orange-500 	'
+							>
 								DOWNLOAD CV{' '}
 								<Download className='md:w-[30px] md:h-[30px] w-5 ' />
-							</div>
-						</Button>
+							</a>
+						</div>
 						<div className='flex items-center justify-center gap-10 mt-5 md:mt-10'>
 							<a href='https://github.com/thrillu4' target='_blank'>
 								<img
